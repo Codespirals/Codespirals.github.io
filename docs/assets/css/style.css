@@ -22,5 +22,11 @@
 
 body {
 	color: var(--color-foreground);
-  background-color: var(--color-background);
+	background-color: var(--color-contrast-0);
+}
+
+.main {
+	max-width: 720px;
+	margin: 0 auto;
+	background-color: var(--color-background);
 }
