@@ -22,6 +22,7 @@
 
 html {
 	font-family: Arial;
+	font-size: 20px;
 }
 
 body {
@@ -29,12 +30,22 @@ body {
 	background-color: var(--color-contrast-0);
 }
 
+h1 {
+	margin: 0;
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+
 .main {
-	max-width: 720px;
+	max-width: 36rem;
 	margin: 0 auto;
+	padding: 1rem;
 	background-color: var(--color-background);
+	border: solid 0.5rem var(--color-contrast-2);
+	border-radius: 1rem;
 }
 
 .title {
+	display: inline;
 	margin: 0 auto;
 }
