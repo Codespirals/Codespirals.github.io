@@ -1,1 +1,26 @@
+:root {
+	--color-foreground: #eee;
+	--color-foreground-muted: #aaa;
+	--color-background: #111;
+	--color-contrast-0: #000;
+	--color-contrast-1: #222;
+	--color-contrast-2: #333;
+	--color-shadow: rgba(255,255,255,0.5);
+}
 
+@media (prefers-color-scheme: light) {
+	:root {
+		--color-foreground: #111;
+		--color-foreground-muted: #444;
+		--color-background: #fff;
+		--color-contrast-0: #eee;
+		--color-contrast-1: #ddd;
+		--color-contrast-2: #ccc;
+		--color-shadow: rgba(0,0,0,0.5);
+	}
+}
+
+body {
+	color: var(--color-foreground);
+  background-color: var(--color-background);
+}
