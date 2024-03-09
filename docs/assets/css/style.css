@@ -38,6 +38,8 @@ header {
 }
 
 footer {
+	width: 100%;
+	padding: 0.125rem 0.25rem;
 	position: absolute;
 	bottom: 0;
 	background-color: var(--color-contrast-0);
@@ -52,7 +54,7 @@ h1 {
 main {
 	max-width: 36rem;
 	margin: 0.25rem auto;
-	padding: 1rem;
+	padding: 0.5rem;
 	background-color: var(--color-background);
 	border: solid 0.25rem var(--color-contrast-2);
 	border-radius: 1rem;
@@ -60,8 +62,12 @@ main {
 
 	main hr {
 		color: var(--color-contrast-2);
-		margin: 0.5rem -1rem;
+		margin: 0.5rem -5rem;
 	}
+
+p {
+	margin: 0.125rem;
+}
 
 .title {
 	display: inline-block;
