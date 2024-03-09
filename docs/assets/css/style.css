@@ -84,6 +84,13 @@ h3 {
 	font-size: 1.125rem;
 }
 
+h4 {
+	margin: 0;
+	padding: 0.125rem;
+	font-size: 1rem;
+	text-decoration: underline;
+}
+
 main {
 	max-width: 36rem;
 	margin: 0.25rem auto;
