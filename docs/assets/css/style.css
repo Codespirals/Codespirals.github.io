@@ -1,4 +1,5 @@
 :root {
+	--color-primary: #fe770c;
 	--color-foreground: #eee;
 	--color-foreground-muted: #aaa;
 	--color-background: #111;
@@ -26,13 +27,17 @@ html {
 }
 
 a {
-	color: var(--color-foreground);
+	color: var(--color-primary);
 	text-decoration: none;
 }
 
 	a:visited {
-		color: var(--color-foreground);
+		color: var(--color-primary);
 		text-decoration: none;
+	}
+
+	a:hover {
+		color: var(--color-foreground-muted);
 	}
 
 body {
@@ -44,6 +49,7 @@ body {
 header {
 	width: 100%;
 	background-color: var(--color-contrast-0);
+	color: var(--color-primary);
 	min-height: 2rem;
 }
 
@@ -98,8 +104,8 @@ p {
 
 ul {
 	margin: 0.125rem 0;
-	padding: 0 0.25rem;
-	list-style-type: none;
+	padding: 0 1rem 0 0;
+	list-style-type: square;
 }
 
 li {
@@ -108,7 +114,7 @@ li {
 
 .center {
 	margin: auto;
-	width:min-content;
+	width: min-content;
 }
 
 .grayscale {
