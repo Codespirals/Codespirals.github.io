@@ -51,8 +51,21 @@ footer {
 
 h1 {
 	margin: 0;
+	padding: 0.25rem;
 	font-size: 1.5rem;
 	font-weight: bold;
+}
+
+h2 {
+	margin: 0;
+	padding: 0.25rem;
+	font-size: 1.3rem;
+}
+
+h3 {
+	margin: 0;
+	padding: 0.125rem;
+	font-size: 1.2rem;
 }
 
 main {
@@ -66,16 +79,16 @@ main {
 
 	main hr {
 		color: var(--color-contrast-2);
-		margin: 0.5rem -0.5rem;
+		margin: 0.25rem -0.5rem;
 	}
 
 p {
 	margin: 0.125rem;
 }
 
-.title {
-	display: inline-block;
-	margin: 0 auto;
+.center {
+	margin: auto;
+	width:min-content;
 }
 
 .grayscale {
