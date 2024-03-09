@@ -26,16 +26,19 @@ html {
 }
 
 header {
+	width: 100%;
 	background-color: var(--color-contrast-0);
 	min-height: 2rem;
 }
 
 body {
+	margin: 0;
 	color: var(--color-foreground);
 	background-color: var(--color-contrast-1);
 }
 
 footer {
+	bottom: 0;
 	background-color: var(--color-contrast-0);
 }
 
