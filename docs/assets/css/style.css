@@ -97,7 +97,13 @@ p {
 }
 
 ul {
+	margin: 0.125rem 0;
+	padding: 0 0.25rem;
 	list-style-type: none;
+}
+
+li {
+	padding: 0.125rem 0;
 }
 
 .center {
@@ -107,4 +113,8 @@ ul {
 
 .grayscale {
 	filter: grayscale(100%);
+}
+
+.right {
+	float: right;
 }
