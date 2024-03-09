@@ -115,7 +115,7 @@ li {
 
 .center {
 	margin: auto;
-	width: min-content;
+	width: max-content;
 }
 
 .grayscale {
