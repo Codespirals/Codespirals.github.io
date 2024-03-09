@@ -25,6 +25,16 @@ html {
 	font-size: 20px;
 }
 
+a {
+	color: var(--color-foreground);
+	text-decoration: none;
+}
+
+	a:visited {
+		color: var(--color-foreground);
+		text-decoration: none;
+	}
+
 body {
 	margin: 0;
 	color: var(--color-foreground);
@@ -84,6 +94,10 @@ main {
 
 p {
 	margin: 0.125rem;
+}
+
+ul {
+	list-style-type: none;
 }
 
 .center {
