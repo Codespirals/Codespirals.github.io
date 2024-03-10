@@ -91,6 +91,11 @@ h4 {
 	text-decoration: underline;
 }
 
+small {
+	font-size: 0.75rem;
+	padding: 0 0.5rem;
+}
+
 main {
 	max-width: 36rem;
 	margin: 0.25rem auto;
