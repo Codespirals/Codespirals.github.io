@@ -84,13 +84,13 @@ h3 {
 	margin: 0;
 	padding: 0.125rem;
 	font-size: 1.125rem;
+	text-decoration: underline;
 }
 
 h4 {
 	margin: 0;
 	padding: 0.125rem;
 	font-size: 1rem;
-	text-decoration: underline;
 }
 
 small {
@@ -100,7 +100,7 @@ small {
 
 main {
 	max-width: 36rem;
-	margin: 2.25rem auto;
+	margin: 0.25rem auto;
 	padding: 0.5rem;
 	background-color: var(--color-background);
 	border: solid 0.25rem var(--color-contrast-2);
@@ -114,6 +114,10 @@ main {
 
 p {
 	margin: 0.125rem;
+}
+
+table {
+	margin: 0.5rem 0;
 }
 
 ul {
