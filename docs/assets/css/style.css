@@ -32,7 +32,7 @@ a {
 }
 
 	a:visited {
-		color: var(--color-primary);
+		color: var(--color-foreground-muted);
 		text-decoration: none;
 	}
 
@@ -118,7 +118,11 @@ p {
 
 table {
 	margin: 0.125rem 0 0.5rem 0;
-	width: stretch;
+	width: 100%;
+}
+
+thead {
+	text-align: left;
 }
 
 ul {
