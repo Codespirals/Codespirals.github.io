@@ -121,6 +121,11 @@ table {
 	width: 100%;
 }
 
+table, td {
+	border: solid 1px var(--color-foreground);
+	border-collapse: collapse;
+}
+
 thead {
 	text-align: left;
 }
@@ -147,4 +152,8 @@ li {
 
 .right {
 	float: right;
+}
+
+.w20 {
+	width: 20%;
 }
