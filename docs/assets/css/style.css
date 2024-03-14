@@ -76,7 +76,7 @@ h1 {
 
 h2 {
 	margin: 0;
-	padding: 0.25rem;
+	padding: 0.25rem 0 0.125rem 0;
 	font-size: 1.25rem;
 	font-weight: bold;
 	color: var(--color-primary);
@@ -84,21 +84,21 @@ h2 {
 
 h3 {
 	margin: 0;
-	padding: 0.125rem;
+	padding: 0.125rem 0 0 0;
 	font-size: 1.125rem;
 	font-weight: bold;
 }
 
 h4 {
 	margin: 0;
-	padding: 0.125rem;
+	padding: 0.125rem 0 0 0;
 	font-size: 1rem;
 	font-weight: bold;
 }
 
 h5 {
 	margin: 0;
-	padding: 0.125rem;
+	padding: 0.125rem 0 0 0;
 	font-size: 0.8rem;
 	font-weight: bold;
 }
