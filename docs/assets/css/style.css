@@ -97,7 +97,6 @@ h4 {
 
 small {
 	font-size: 0.625rem;
-	padding: 0 0 0 1.5rem;
 }
 
 main {
@@ -138,9 +137,9 @@ ul {
 	list-style-type: square;
 }
 
-	ul .no-style {
-		list-style-type: none;
-	}
+.no-style {
+	list-style-type: none;
+}
 
 li {
 	font-size: 0.8rem;
