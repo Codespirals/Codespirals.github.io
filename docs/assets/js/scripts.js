@@ -2,4 +2,8 @@ function setYear() {
 	document.getElementById("currentYear").innerHTML = new Date().getFullYear();
 }
 
-window.onload = setYear();
+function onWindowLoad() {
+	setYear();
+}
+
+window.onload = onWindowLoad();
