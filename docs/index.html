@@ -34,11 +34,11 @@
         <div class="section">
             <h2>Current generic codespirals packages:</h2>
             <ul>
-                <li><a href="https://github.com/Codespirals/Codespirals.Base">Base - A few basic interfaces that simplify some basic actions and classes.</a> ☭🔏</li>
-                <li><a href="https://github.com/Codespirals/Codespirals.Snippets">Snippets - A bunch of unrelated, but potentially useful code sinppets.</a> ☭🔏</li>
-                <li><a href="https://github.com/Codespirals/Codespirals.Api">Api - A rather sophisticated package to make it easy to call an API from code.</a> ☭🔏</li>
-                <li><a href="https://github.com/Codespirals/Codespirals.Logger">Logger - An extension of ILogger to fit common needs of a project.</a> ☭🔏</li>
-                <li><a href="https://github.com/Codespirals/Codespirals.Scheduler">Scheduler - A package to easily add a task scheduler to a project.</a> ☭🔏</li>
+                <li><a href="https://github.com/Codespirals/Codespirals.Base">Base - A few basic interfaces that simplify some basic actions and classes.</a> ☭🔑</li>
+                <li><a href="https://github.com/Codespirals/Codespirals.Snippets">Snippets - A bunch of unrelated, but potentially useful code sinppets.</a> ☭🔑</li>
+                <li><a href="https://github.com/Codespirals/Codespirals.Api">Api - A rather sophisticated package to make it easy to call an API from code.</a> ☭🔑</li>
+                <li><a href="https://github.com/Codespirals/Codespirals.Logger">Logger - An extension of ILogger to fit common needs of a project.</a> ☭🔑</li>
+                <li><a href="https://github.com/Codespirals/Codespirals.Scheduler">Scheduler - A package to easily add a task scheduler to a project.</a> ☭🔑</li>
             </ul>
         </div>
         <div class="section">
@@ -48,27 +48,34 @@
                     <h3>
                         <a href="https://github.com/Collabour">Collabour</a>
                     </h3>
-                    <h4>An application and website to find resources for, and keep track of, small to medium sized projects</h4>
+                    <p>An application and website to find resources for, and keep track of, small to medium sized projects</p>
                     <ul>
                         <li>
-                            Collabour.Packages 🔓🔏
+                            <h4>Core 🔓🔑</h4>
                             <ul>
-                                <li>Collabour.Resources - The basic collection of classes and resources necessary to use the website programatically</li>
-                                <li>Collabour.SDK - A .Net SDK to interact with the Collabour API</li>
+                                <li>Core - A few resources and enums shared between all projects under this umbrella</li>
                             </ul>
                         </li>
                         <li>
-                            Collabour.Frontend 🔓🔏
+                            <h4>Packages 🔓🔑</h4>
                             <ul>
-                                <li>Collabour.Website - The main Collabour ASP.Net website using the Collabour SDK</li>
+                                <li>Resources - The basic collection of classes and resources that will be returned by the API and used for display on the website</li>
+                                <li>SDK - A .Net SDK to interact with the Collabour API</li>
+                                <li>Mock - A very simple data mocker implementing the SDK to simulate API calls returning semi-randomly generated mock objects</li>
                             </ul>
                         </li>
                         <li>
-                            Collabour.Backend 🔒
+                            <h4>Frontend 🔓🔑</h4>
                             <ul>
-                                <li>Collabour.Api - The REST API to get data of the Collabour application</li>
-                                <li>Collabour.DB - An EF Core / PostgreSQL database</li>
-                                <li>Collabour.AWS - An interface between the Collabour application and AWS servers</li>
+                                <li>Website - The main Collabour ASP.Net website using the Collabour SDK</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h4>Backend 🔒</h4>
+                            <ul>
+                                <li>Api - The REST API to get data of the Collabour application</li>
+                                <li>DB - An EF Core / PostgreSQL database</li>
+                                <li>AWS - An interface between the Collabour application and AWS servers</li>
                             </ul>
                         </li>
                     </ul>
@@ -81,7 +88,7 @@
             <ul class="no-style">
                 <li><small>☭ - completly open source. free to fork, modify and use for anyone however they wish</small></li>
                 <li><small>🔓 - open source, but with an <a href="https://creativecommons.org/licenses/by-sa/4.0/">attribution licence</a></small></li>
-                <li><small>🔏 - private until fully tested and released</small></li>
+                <li><small>🔑 - private until fully tested and released</small></li>
                 <li><small>🔒 - private for now.</small></li>
             </ul>
         </div>
