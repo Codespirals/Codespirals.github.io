@@ -1,7 +1,7 @@
 :root {
 	--color-primary: #fe770c;
 	--color-foreground: #eee;
-	--color-foreground-muted: #aaa;
+	--color-foreground-muted: #ccc;
 	--color-background: #111;
 	--color-contrast-0: #000;
 	--color-contrast-1: #222;
@@ -12,7 +12,7 @@
 @media (prefers-color-scheme: light) {
 	:root {
 		--color-foreground: #111;
-		--color-foreground-muted: #444;
+		--color-foreground-muted: #333;
 		--color-background: #fff;
 		--color-contrast-0: #eee;
 		--color-contrast-1: #ddd;
@@ -26,15 +26,10 @@ html {
 	font-size: 20px;
 }
 
-a {
+a, a:visited {
 	color: var(--color-foreground-muted);
 	text-decoration: none;
 }
-
-	a:visited {
-		color: var(--color-foreground-muted);
-		text-decoration: none;
-	}
 
 	a:hover {
 		color: var(--color-primary);
@@ -99,8 +94,7 @@ h4 {
 h5 {
 	margin: 0;
 	padding: 0.125rem 0 0 0;
-	font-size: 0.8rem;
-	font-weight: bold;
+	font-size: 1rem;
 }
 
 small {
