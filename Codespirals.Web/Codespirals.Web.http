@@ -1,0 +1,6 @@
+@Codespirals.Web_HostAddress = http://localhost:5152
+
+GET {{Codespirals.Web_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
