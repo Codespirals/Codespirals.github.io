@@ -5,7 +5,11 @@ VisualStudioVersion = 17.11.35208.52
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codespirals.Web", "Codespirals.Web\Codespirals.Web.csproj", "{8BEF0832-F9B4-4203-96B0-C7C980579F01}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{9B5AEBFE-DDF0-4B40-B15C-9A45ABB538B5}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{9B5AEBFE-DDF0-4B40-B15C-9A45ABB538B5}"
+	ProjectSection(SolutionItems) = preProject
+		Codespirals.Web\docs\CNAME = Codespirals.Web\docs\CNAME
+		Codespirals.Web\docs\index.html = Codespirals.Web\docs\index.html
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
