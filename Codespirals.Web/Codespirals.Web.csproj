@@ -11,9 +11,4 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Include="wwwroot\css\style.css" />
-    <None Include="wwwroot\js\scripts.js" />
-  </ItemGroup>
-
 </Project>

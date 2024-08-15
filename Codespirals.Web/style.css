@@ -1,0 +1,166 @@
+:root {
+	--color-primary: #fe770c;
+	--color-foreground: #eee;
+	--color-foreground-muted: #ccc;
+	--color-background: #111;
+	--color-contrast-0: #000;
+	--color-contrast-1: #222;
+	--color-contrast-2: #333;
+	--color-shadow: rgba(255,255,255,0.5);
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		--color-foreground: #111;
+		--color-foreground-muted: #333;
+		--color-background: #fff;
+		--color-contrast-0: #eee;
+		--color-contrast-1: #ddd;
+		--color-contrast-2: #ccc;
+		--color-shadow: rgba(0,0,0,0.5);
+	}
+}
+
+html {
+	font-family: Arial;
+	font-size: 20px;
+}
+
+a, a:visited {
+	color: var(--color-foreground-muted);
+	text-decoration: none;
+}
+
+	a:hover {
+		color: var(--color-primary);
+	}
+
+body {
+	margin: 0;
+	color: var(--color-foreground);
+	background-color: var(--color-contrast-1);
+}
+
+header {
+	top: 0;
+	position: sticky;
+	width: 100%;
+	background-color: var(--color-contrast-0);
+	min-height: 2rem;
+}
+
+footer {
+	width: 100%;
+	padding: 0;
+	position: sticky;
+	bottom: 0;
+	background-color: var(--color-contrast-0);
+}
+
+.footer-content {
+	padding: 0.125rem 0.25rem;
+}
+
+h1 {
+	margin: 0;
+	padding: 0.25rem;
+	font-size: 1.5rem;
+	font-weight: bold;
+	color: var(--color-primary);
+}
+
+h2 {
+	margin: 0;
+	padding: 0.25rem 0 0.125rem 0;
+	font-size: 1.25rem;
+	font-weight: bold;
+	color: var(--color-primary);
+}
+
+h3 {
+	margin: 0;
+	padding: 0.125rem 0 0 0;
+	font-size: 1.125rem;
+	font-weight: bold;
+}
+
+h4 {
+	margin: 0;
+	padding: 0.125rem 0 0 0;
+	font-size: 1rem;
+	font-weight: bold;
+}
+
+h5 {
+	margin: 0;
+	padding: 0.125rem 0 0 0;
+	font-size: 1rem;
+}
+
+small {
+	font-size: 0.75rem;
+}
+
+main {
+	max-width: 36rem;
+	margin: 0.25rem auto;
+	background-color: var(--color-background);
+	border: solid 0.25rem var(--color-contrast-2);
+	border-radius: 1rem;
+}
+
+	main hr {
+		color: var(--color-contrast-2);
+		margin: 0.25rem -0.5rem;
+	}
+
+p {
+	margin: 0.125rem;
+}
+
+.section {
+	padding: 0.5rem;
+	border-bottom: solid 0.125rem var(--color-contrast-2);
+}
+
+table {
+	margin: 0.06rem 0 0.5rem 0;
+	width: 100%;
+	border-collapse: collapse;
+}
+
+td {
+	border-bottom: solid 0.125rem var(--color-foreground-muted);
+}
+
+ul {
+	margin: 0.125rem 0;
+	padding: 0 0 0 1.5rem;
+	list-style-type: square;
+}
+
+.no-style {
+	list-style-type: none;
+}
+
+li {
+	font-size: 0.8rem;
+	padding: 0.125rem 0;
+}
+
+.center {
+	margin: auto;
+	width: max-content;
+}
+
+.grayscale {
+	filter: grayscale(100%);
+}
+
+.right {
+	float: right;
+}
+
+.w15 {
+	width: 15%;
+}
