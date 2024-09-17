@@ -116,7 +116,7 @@ p {
 	margin: 0 0.125rem 0.25rem 0.125rem;
 }
 small {
-	font-size: 0.8em;
+	font-size: 0.625rem;
 	color: var(--color-foreground-muted);
 }
 
