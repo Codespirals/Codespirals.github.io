@@ -1,7 +1,8 @@
 :root {
 	--color-primary: #fe770c;
 	--color-foreground: #eee;
-	--color-foreground-muted: #ccc;
+	--color-foreground-link: #ddd;
+	--color-foreground-muted: #aaa;
 	--color-background: #111;
 	--color-contrast-0: #000;
 	--color-contrast-1: #222;
@@ -12,7 +13,8 @@
 @media (prefers-color-scheme: light) {
 	:root {
 		--color-foreground: #111;
-		--color-foreground-muted: #333;
+		--color-foreground-link: #222;
+		--color-foreground-muted: #555;
 		--color-background: #fff;
 		--color-contrast-0: #eee;
 		--color-contrast-1: #ddd;
@@ -27,7 +29,7 @@ html {
 }
 
 a, a:visited {
-	color: var(--color-foreground-muted);
+	color: var(--color-foreground-link);
 	text-decoration: none;
 }
 
@@ -115,6 +117,7 @@ p {
 }
 small {
 	font-size: 0.8em;
+	color: var(--color-foreground-muted);
 }
 
 .section {
