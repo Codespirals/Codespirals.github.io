@@ -111,7 +111,10 @@ main {
 	}
 
 p {
-	margin: 0.125rem;
+	margin: 0 0.125rem 0.25rem 0.125rem;
+}
+small {
+	font-size: 0.8em;
 }
 
 .section {
