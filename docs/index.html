@@ -21,7 +21,7 @@
             <p>
                 The project aims to set up a bunch of modular libraries that can be used to more easily create frequently used features of applications.
                 <br/>
-                To achieve this the project modules commonly contain the following properties:
+                To achieve this, the project modules commonly contain the following properties:
                 <ul>
                     <li>One or more "service" classes, which have to be registered in the app builder and will then be injected where required through standard DI.</li>
                     <li>An "options" class of some kind which will read a number of settings from a config file. These settings will be injected into the respective service.</li>
@@ -43,24 +43,32 @@
                     </ul>
                 </li>
                 <li><a href="https://github.com/Codespirals/Codespirals.Mail">Mail</a> - A service to very easily implement mailing in any project. <small>☭🔑</small> <small>Progress: 90%</small></li>
-                <li><a href="https://github.com/Codespirals/Codespirals.ApiCaller">ApiCaller</a> - A service to make it easy to call an API from code. <small>☭🔑</small> <small>Progress: 95%</small></li>
                 <li><a href="https://github.com/Codespirals/Codespirals.Api">Api</a> - A set of extensions and code to streamline building an API. <small>☭🔑</small> <small>Progress: 40%</small></li>
-                <li><a href="https://github.com/Codespirals/Codespirals.Logger">Logger</a> - An implementation of ILogger to fit common needs of a project. <small>☭🔑</small> <small>Progress: 70%</small></li>
+                <li><a href="https://github.com/Codespirals/Codespirals.ApiCaller">ApiCaller</a> - A service to standardize calling an API from code. <small>☭🔑</small> <small>Progress: 95%</small></li>
                 <li><a href="https://github.com/Codespirals/Codespirals.Scheduler">Scheduler</a> - A package to easily add a task scheduler to a project. <small>☭🔑</small> <small>Progress: 80%</small></li>
                 <li><a href="https://github.com/Codespirals/Codespirals.Users">Users</a> - Unified user handling for smaller projects. <small>☭🔑</small> <small>Progress: 80%</small></li>
             </ul>
         </div>
         <div class="section">
-            <h2>Projects these modules are featured in:</h2>
+            <h2>Projects these modules are used in:</h2>
             <ul>
                 <li>
                     <h3>
                         <a href="https://github.com/youser-name">Youser</a>
                     </h3>
-                    <p>An application and website to keep and get user information.</p>
+                    <p>An application and website to store and retrieve global user information.</p>
                     <ul>
                         <li>
-
+                            <h4>Frontend <small>🔒</small></h4>
+                            <ul>
+                                <li>Api - An Api to interface with this application <small>Progress: 60%</small></li>
+                            </ul>
+                            <h4>Backend <small>🔒</small></h4>
+                            <ul>
+                                <li>Core - A few resources, models and enums shared between all projects under this umbrella <small>Progress: 60%</small></li>
+                                <li>Lib - A collection of services to call get and transform data in the database <small>Progress: 60%</small></li>
+                                <li>DB - An EF Core / PostgreSQL database <small>Progress: 80%</small></li>
+                            </ul>
                         </li>
                     </ul>
                 </li>
@@ -73,7 +81,7 @@
                         <li>
                             <h4>Core <small>🔓🔑</small></h4>
                             <ul>
-                                <li>Core - A few resources and enums shared between all projects under this umbrella <small>Progress: 100%</small></li>
+                                <li>Core - A few resources, models and enums shared between all projects under this umbrella <small>Progress: 100%</small></li>
                             </ul>
                         </li>
                         <li>
@@ -81,19 +89,20 @@
                             <ul>
                                 <li>Resources - The basic collection of classes and resources that will be returned by the API and used for display on the website <small>Progress: 90%</small></li>
                                 <li>SDK - A .Net SDK to interact with the Collabour API <small>Progress: 90%</small></li>
-                                <li>Mock - A very simple data mocker implementing the SDK to simulate API calls returning semi-randomly generated mock objects <small>Progress: 90%</small></li>
+                                <li>Mock - A very simple data mocker implementing the SDK to simulate API calls returning semi-randomly generated mock objects for testing purposes <small>Progress: 90%</small></li>
                             </ul>
                         </li>
                         <li>
                             <h4>Frontend <small>🔓🔑</small></h4>
                             <ul>
-                                <li>Website - The main Collabour ASP.Net website using the Collabour SDK <small>Progress: 70%</small></li>
+                                <li>Website - The main Collabour .Net website using the Collabour SDK <small>Progress: 70%</small></li>
                             </ul>
                         </li>
                         <li>
                             <h4>Backend <small>🔒</small></h4>
                             <ul>
                                 <li>Api - The REST API to get data of the Collabour application <small>Progress: 60%</small></li>
+                                <li>Lib - A collection of services to call get and transform data in the database <small>Progress: 80%</small></li>
                                 <li>DB - An EF Core / PostgreSQL database <small>Progress: 90%</small></li>
                             </ul>
                         </li>
