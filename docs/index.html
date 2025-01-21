@@ -19,45 +19,43 @@
             <p>
                 Codespirals is a small software company that attempts to create a solid foundation of code libraries and modules to build interesting and helpful projects on top of.
             </p>
-            <h3>Modules:</h3>
+            <h3>Libraries:</h3>
             <p>
                 A codespirals module is a code library made for a specific purpose, which is usually described by the module's name and README.
             </p>
-                <div>
-                    <h4>Structure</h4>
-                    <p>
-                        Codespirals libraries usually contain anywhere from one to all of the following submodules, depending on size and scope:
-                    </p>
-                    <div>
-                        <h5>Shared</h5>
-                        <p>
-                            Collections of interfaces that dictate the outline and behaviour of objects
-                        </p>
-                        <h5>Extensions</h5>
-                        <p>
-                            Loosely coupled implementations of methods attached to the interfaces from an Abstraction module or a basic type.
-                        </p>
-                        <h5>Database</h5>
-                        <p>
-                            An as generically-as-possible implemented set of interfaces (and rarely classes) to facilitate adding the module to a user's EF Core database.
-                        </p>
-                        <h5>Implementation</h5>
-                        <p>
-                            Modules of this type are rarer, but some things are implemented the same way basically everywhere, so to keep things DRY, these modules try to implement them robustly once.
-                            A module of this type may implement its own database, however that database would be very limited in scope and involve no sensitive, non-public data and handle mostly reads and very few write operations.
-                        </p>
-                    </div>
-                    <h4>Design philosophy</h4>
-                    <ul>
-                        <li>A module should be as self contained as possible. While some will certainly import other NuGet packages, as reinventing the wheel is rarely worth it, those external dependencies should be kept to a minimum.</li>
-                        <li></li>
-                        <li>Modules must be designed and built with the thought of releasing them freely for anyone to use. Anything beyond that should be a "project" which implements the modules instead.</li>
-                    </ul>
-
-                </div>
+            <h4>Structure</h4>
+            <p>
+                Codespirals libraries usually contain anywhere from one to all of the following submodules, depending on size and scope:
+            </p>
+            <div>
+                <h5>Shared</h5>
+                <p>
+                    Collections of interfaces that dictate the outline and behaviour of objects
+                </p>
+                <h5>Frontend</h5>
+                <p>
+                    A set of classes and interfaces building upon the "Shared" package to facilitate the use of the module in a frontend application.
+                </p>
+                <h5>Backend</h5>
+                <p>
+                    An as generically-as-possible implemented set of the interfaces from the "Shared" package to facilitate adding the module to a user's EF Core database and generally using it in backend code.
+                </p>
+            </div>
+            <h4>Design philosophy</h4>
+            <ul>
+                <li>A module should be as self contained as possible. While some will certainly import other NuGet packages (as reinventing the wheel is rarely worth it), those external dependencies should be kept to a minimum.</li>
+                <li>Modules must be designed and built with the thought of releasing them freely for anyone to use. Anything beyond that should be a "project" which implements the modules instead.</li>
+            </ul>
         </div>
         <div class="section">
             <h2>Current generic codespirals packages:</h2>
+            <ul>
+                <li><a href="https://github.com/Codespirals/Codespirals.Base">Base</a> - A few basic interfaces that simplify some basic actions and classes. <small>☭🔑</small> <small>Progress: 99%</small></li>
+                <li><a href="https://github.com/Codespirals/Codespirals.Api">Api</a> - A set of extensions and code to streamline building an API. <small>☭🔑</small> <small>Progress: 40%</small></li>
+                <li><a href="https://github.com/Codespirals/Codespirals.ApiCaller">ApiCaller</a> - A service to standardize calling an API from code. <small>☭🔑</small> <small>Progress: 95%</small></li>
+                <li><a href="https://github.com/Codespirals/Codespirals.Users">Users</a> - Unified user handling for smaller projects. <small>☭🔑</small> <small>Progress: 80%</small></li>
+            </ul>
+            <h2>Codespirals solutions</h2>
             <ul>
                 <li><a href="https://github.com/Codespirals/Codespirals.Base">Base</a> - A few basic interfaces that simplify some basic actions and classes. <small>☭🔑</small> <small>Progress: 99%</small></li>
                 <li><a href="https://github.com/Codespirals/Codespirals.Mail">Mail</a> - A service to very easily implement mailing in any project. <small>☭🔑</small> <small>Progress: 90%</small></li>
