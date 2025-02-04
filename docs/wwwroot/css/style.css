@@ -123,6 +123,12 @@ small {
 	border-bottom: solid 0.125rem var(--color-contrast-2);
 }
 
+.card {
+	color: var(--color-foreground);
+	background-color: var(--color-background);
+	border: solid 0.25rem var(--color-contrast-1);
+}
+
 table {
 	margin: 0.06rem 0 0.5rem 0;
 	width: 100%;
