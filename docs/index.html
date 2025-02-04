@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="wwwroot/css/style.css" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <title>Codespirals</title>
 </head>
 <body>
@@ -23,7 +24,7 @@
         <div class="section">
             <h3>Libraries:</h3>
             <p>
-                A codespirals module is a code library made for a specific purpose, which is usually described by the module's name and README.
+                A codespirals library module is a set of abstract code made for a specific purpose, which is usually described by the module's name and README.
             </p>
             <h4>Structure</h4>
             <p>
@@ -43,11 +44,34 @@
                     An as generically-as-possible implemented set of the interfaces from the "Shared" package to facilitate adding the module to a user's EF Core database and generally using it in backend code.
                 </p>
             </div>
-            <h4>Design philosophy</h4>
-            <ul>
-                <li>A module should be as self contained as possible. While some will certainly import other NuGet packages (as reinventing the wheel is rarely worth it), those external dependencies should be kept to a minimum.</li>
-                <li>Modules must be designed and built with the thought of releasing them freely for anyone to use. Anything beyond that should be a "project" which implements the modules instead.</li>
-            </ul>
+        </div>
+        <div class="section">
+            <h3>Solutions:</h3>
+            <p>
+                Solution modules are fully implemented programs that can be attached to other projects to expedite frequently required functionalities like payment processing or mailing.
+            </p>
+            <h4>Structure</h4>
+            <p>
+                While largely unique to the individual solution, most share a few commonalities (though they are not required to):
+            </p>
+            <div>
+                <h5>Options Model</h5>
+                <p>
+                    A class that contains all the options required to use the solution. This is a POGO class that mirrors the options set in the appsettings.json file (or similar).
+                </p>
+                <h5>Services</h5>
+                <p>
+                    A set of [...]Service classes and interfaces that implement the functionality of the solution, which can be used via dependency injection.
+                </p>
+                <h5>App builder extension</h5>
+                <p>
+                    One or more methods to add the solution to the IServiceCollection and IApplicationBuilder in the Startup.cs file.
+                </p>
+                <h5>Various Models and Exceptions</h5>
+                <p>
+                    The simple models and exceptions that make sure the solution is as self contained as possible.
+                </p>
+            </div>
         </div>
         <div class="section">
             <h2>Current generic codespirals libraries:</h2>
@@ -56,7 +80,7 @@
                 <li><a href="https://github.com/Codespirals/Codespirals.Api">Api</a> - A set of extensions and code to streamline building an API. <small>☭🔑</small> <small>Progress: 40%</small></li>
                 <li><a href="https://github.com/Codespirals/Codespirals.Users">Users</a> - Unified user handling for smaller projects. <small>☭🔑</small> <small>Progress: 80%</small></li>
                 <li><a href="https://github.com/Codespirals/Codespirals.Search">Search</a> - A set of interfaces and extensions to facilitate searching through lists. <small>☭🔑</small> <small>Progress: 99%</small></li>
-                <li><a href="https://github.com/Codespirals/Codespirals.Resources">Resources</a> - A collection of frequently used items like currency, languages or countries <small>☭🔑</small> <small>Progress: 99%</small></li>
+                <li><a href="https://github.com/Codespirals/Codespirals.Common">Common</a> - A collection of frequently used items like currency, money, languages or countries <small>☭🔑</small> <small>Progress: 99%</small></li>
             </ul>
             <h2>Codespirals solutions:</h2>
             <ul>
@@ -100,23 +124,8 @@
             </div>
             <div class="card">
                 <h3>
-                    <a href="https://github.com/youser-name">Youser</a>
+                    Other Ideas are in the backlog, but I'm trying to avoid scope creep and focus on the current projects
                 </h3>
-                <p>An application and website to store and retrieve global user information.</p>
-                <ul>
-                    <li>
-                        <h4>Frontend <small>🔒</small></h4>
-                        <ul>
-                            <li>Api - An Api to interface with this application <small>Progress: 60%</small></li>
-                        </ul>
-                        <h4>Backend <small>🔒</small></h4>
-                        <ul>
-                            <li>Shared - A few resources, models and enums shared between all projects under this umbrella <small>Progress: 60%</small></li>
-                            <li>Lib - A collection of services to call get and transform data in the database <small>Progress: 60%</small></li>
-                            <li>DB - An EF Core / PostgreSQL database <small>Progress: 80%</small></li>
-                        </ul>
-                    </li>
-                </ul>
             </div>
         </div>
         <div class="section">
@@ -132,9 +141,12 @@
     </main>
     <footer>
         <div class="footer-content">
-            &copy;codespirals <span id="currentYear"></span> <span class="right"><a href="mailto:admin@codespirals.dev">✉</a> 🇨🇭</span>
+            &copy;codespirals <span id="currentYear"></span> <span class="right"><a href="mailto:admin@codespirals.dev">✉</a></span>
         </div>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="wwwroot/js/scripts.js"></script>
 </body>
 </html>
