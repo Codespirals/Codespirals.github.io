@@ -5,12 +5,20 @@ VisualStudioVersion = 17.11.35208.52
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codespirals.Web", "Codespirals.Web\Codespirals.Web.csproj", "{8BEF0832-F9B4-4203-96B0-C7C980579F01}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A0DAC86B-1C65-4133-86D8-26D2F0C8EF7C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs (replication)", "docs (replication)", "{A0DAC86B-1C65-4133-86D8-26D2F0C8EF7C}"
 	ProjectSection(SolutionItems) = preProject
-		Codespirals.Web\Images\favicon.png = Codespirals.Web\Images\favicon.png
 		docs\index.html = docs\index.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "wwwroot", "wwwroot", "{B3B7171C-B291-4A8A-8425-C6A781F1CCDA}"
+	ProjectSection(SolutionItems) = preProject
 		docs\wwwroot\js\scripts.js = docs\wwwroot\js\scripts.js
 		docs\wwwroot\css\style.css = docs\wwwroot\css\style.css
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Images", "Images", "{8BE1B048-0487-4DF6-9DB8-C60F4608F0E3}"
+	ProjectSection(SolutionItems) = preProject
+		docs\Images\favicon.png = docs\Images\favicon.png
 	EndProjectSection
 EndProject
 Global
@@ -26,6 +34,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B3B7171C-B291-4A8A-8425-C6A781F1CCDA} = {A0DAC86B-1C65-4133-86D8-26D2F0C8EF7C}
+		{8BE1B048-0487-4DF6-9DB8-C60F4608F0E3} = {A0DAC86B-1C65-4133-86D8-26D2F0C8EF7C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8E173AB2-BEEF-442A-94E0-159BA797A46F}
