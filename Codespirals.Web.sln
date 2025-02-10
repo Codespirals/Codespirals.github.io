@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codespirals.Web", "Codespir
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A0DAC86B-1C65-4133-86D8-26D2F0C8EF7C}"
 	ProjectSection(SolutionItems) = preProject
-		Codespirals.Web\favicon.ico = Codespirals.Web\favicon.ico
+		Codespirals.Web\Images\favicon.png = Codespirals.Web\Images\favicon.png
 		docs\index.html = docs\index.html
 		docs\wwwroot\js\scripts.js = docs\wwwroot\js\scripts.js
 		docs\wwwroot\css\style.css = docs\wwwroot\css\style.css
