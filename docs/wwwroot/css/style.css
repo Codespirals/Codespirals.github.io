@@ -124,9 +124,15 @@ small {
 }
 
 .card {
-	color: var(--color-foreground);
-	background-color: var(--color-background);
-	border: solid 0.25rem var(--color-contrast-1);
+    color: var(--color-foreground);
+    background-color: var(--color-background);
+    border: solid 0.25rem var(--color-contrast-1);
+}
+.card-title {
+    color: var(--color-primary);
+}
+.card-body {
+	padding: 0.125rem;
 }
 
 table {
