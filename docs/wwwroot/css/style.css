@@ -29,7 +29,6 @@ html {
 }
 
 a, a:visited {
-	color: var(--color-foreground-link);
 	text-decoration: none;
 }
 
