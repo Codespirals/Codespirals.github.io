@@ -28,19 +28,20 @@ html {
 	font-size: 20px;
 }
 
-a, a:visited {
-	text-decoration: none;
-}
-
-	a:hover {
-		color: var(--color-primary);
-	}
-
 body {
 	margin: 0;
 	color: var(--color-foreground);
 	background-color: var(--color-contrast-1);
 }
+
+a, a:visited {
+	text-decoration: none;
+	color: inherit;
+}
+
+	a:hover {
+		color: var(--color-primary);
+	}
 
 header {
 	top: 0;
