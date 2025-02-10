@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35208.52
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codespirals.Web", "Codespirals.Web\Codespirals.Web.csproj", "{8BEF0832-F9B4-4203-96B0-C7C980579F01}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs (replication)", "docs (replication)", "{A0DAC86B-1C65-4133-86D8-26D2F0C8EF7C}"
 	ProjectSection(SolutionItems) = preProject
 		docs\index.html = docs\index.html
@@ -25,12 +23,6 @@ Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8BEF0832-F9B4-4203-96B0-C7C980579F01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8BEF0832-F9B4-4203-96B0-C7C980579F01}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8BEF0832-F9B4-4203-96B0-C7C980579F01}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8BEF0832-F9B4-4203-96B0-C7C980579F01}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

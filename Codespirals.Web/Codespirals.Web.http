@@ -1,6 +1,0 @@
-@Codespirals.Web_HostAddress = http://codespirals.dev/api
-
-GET {{Codespirals.Web_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
