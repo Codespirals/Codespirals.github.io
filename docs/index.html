@@ -18,35 +18,25 @@
         <div class="section">
             <h2 class="center">Welcome to codespirals</h2>
             <p>
-                In an endless spiral, we close in on <strong><a href="#source1">the perfect code</a></strong>. With each iteration we seem to get closer, yet we can never reach it. Such is life.
+                Thanks for checking out my dev page.
             </p>
             <p>
                 Codespirals is a small software company from Switzerland that attempts to create a solid foundation of code libraries and modules to build interesting and helpful projects on top of.
             </p>
         </div>
         <div class="section">
-            <h3>Libraries:</h3>
-            <h4>About</h4>
+            <h3>Modules:</h3>
             <p>
                 A codespirals library module is a set of mostly abstract code made for a specific purpose, which is usually described by the module's name and README.
             </p>
-            <h4>Structure</h4>
             <p>
-                Codespirals libraries usually contain anywhere from one to all of the following submodules, depending on size and scope:
+                These modules are denoted with the name "Codespirals.[Module name]".
             </p>
+            <h4>The main module:</h4>
             <div>
-                <h5>Shared</h5>
+                <h5>Codespirals.[Module].Shared</h5>
                 <p>
-                    Collections of interfaces that dictate the outline and behaviour of objects
-                </p>
-                <h5>Frontend</h5>
-                <p>
-                    A set of classes and interfaces building upon the "Shared" package to facilitate the use of the module in a frontend application.
-                    This may include Blazor components.
-                </p>
-                <h5>Backend</h5>
-                <p>
-                    Extensions, additional interfaces and functions utilizing the existing interfaces from the "Shared" package to facilitate adding the module to a project's EF Core database and generally using it in backend code.
+                    The main module. These define the very basic classes and interfaces of the entire library in a NuGet package that is then imported by all other submodules.
                 </p>
             </div>
         </div>
@@ -60,59 +50,81 @@
                 While largely unique to the individual solution, most share a few commonalities (though they are not required to):
             </p>
             <div>
+                <h5>Services</h5>
+                <p>
+                    A set of [...]Service classes and interfaces that implement the functionality of the solution, which can be used via dependency injection.
+                    <code>
+                        OtherClass(IService service)
+                    </code>
+                </p>
                 <h5>Options Model</h5>
                 <p>
                     A class that contains all the options that can be individualised in a project, which are required to use the solution.
                     This is a POGO class that mirrors the options set in the appsettings.json file (or similar).
                 </p>
-                <h5>Services</h5>
                 <p>
-                    A set of [...]Service classes and interfaces that implement the functionality of the solution, which can be used via dependency injection.
+                    This class will be used to inject settings into services via
+                    <code>
+                        Service(IOptions<OptionsModel> options)
+                    </code>
                 </p>
                 <h5>App builder extension</h5>
                 <p>
                     One or more methods to add the solution to the IServiceCollection and IApplicationBuilder (usually in the Startup.cs file).
                     If the solution contains only a single service, this is usually omitted.
                 </p>
-                <h5>Various Models and Exceptions</h5>
+                <h5>Other interfaces, models and extensions</h5>
                 <p>
-                    The simple models and exceptions that make sure the solution is as self contained as possible but can be properly interacted with by implementing projects.
+                    The simple models and exceptions that make sure the solution is as self contained as possible.
                 </p>
             </div>
         </div>
         <div class="section">
-            <h2>Current generic codespirals libraries:</h2>
+            <h3>Solutions:</h3>
+        </div>
+        <div class="section">
+            <h3>Current generic codespirals libraries:</h3>
             <ul>
                 <li><a href="https://github.com/Codespirals/Codespirals.Base">Base</a> - A few basic interfaces that simplify some basic actions and classes. <small>☭🔑</small> <small>Progress: -%</small></li>
-                <li><a href="https://github.com/Codespirals/Codespirals.Api">Api</a> - A set of extensions and code to streamline building an API. <small>☭🔑</small> <small>Progress: 40%</small></li>
                 <li><a href="https://github.com/Codespirals/Codespirals.Users">Users</a> - Unified user handling for smaller projects. <small>☭🔑</small> <small>Progress: 80%</small></li>
-                <li><a href="https://github.com/Codespirals/Codespirals.Search">Search</a> - A set of interfaces and extensions to facilitate searching through lists. <small>☭🔑</small> <small>Progress: 99%</small></li>
                 <li><a href="https://github.com/Codespirals/Codespirals.Common">Common</a> - A collection of frequently used items like currency, money, languages or countries <small>☭🔑</small> <small>Progress: 99%</small></li>
             </ul>
-            <h2>Codespirals solutions:</h2>
+            <h3>Codespirals solutions:</h3>
             <ul>
-                <li><a href="https://github.com/Codespirals/Codespirals.Pay">Pay</a> - Services to facilitate processing payments. <small>☭🔑</small> <small>Progress: 60%</small></li>
-                <li><a href="https://github.com/Codespirals/Codespirals.Solutions">Mail</a> - A service to very easily implement mailing in any project. <small>☭🔑</small> <small>Progress: 90%</small></li>
-                <li><a href="https://github.com/Codespirals/Codespirals.Solutions">ApiCaller</a> - A small service to standardize calling an API from code. <small>☭🔑</small> <small>Progress: 95%</small></li>
-                <li><a href="https://github.com/Codespirals/Codespirals.Solutions">Scheduler</a> - A package to easily add a task scheduler to a project. <small>☭🔑</small> <small>Progress: 80%</small></li>
+                <li><a href="https://github.com/Codespirals/Codespirals.Solutions">Mail</a> - A service to very easily implement mailing in any project. <small>☭🔑</small> <small>Progress: Working, but always improving.</small></li>
+                <li><a href="https://github.com/Codespirals/Codespirals.Solutions">ApiCaller</a> - A small service to standardize calling an API from code. <small>☭🔑</small> <small>Progress: Working, but always improving.</small></li>
+                <li><a href="https://github.com/Codespirals/Codespirals.Solutions">Scheduler</a> - A package to easily add a task scheduler to a project. <small>☭🔑</small> <small>Progress: 70%</small></li>
             </ul>
         </div>
         <div class="section">
-            <h2>Projects these modules are used in:</h2>
+            <h3>Projects these modules are used in:</h3>
         </div>
         <div id="carouselProjects" class="carousel slide">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
+            <div class="carousel-inner active">
+                <div class="carousel-item">
                     <div class="card">
                         <div class="card-body">
                             <div class="card-title">
-                                <h3><a href="https://github.com/Collabour">Collabour</a></h3>
+                                <h4>Resource-api</h4>
+                            </div>
+                            <div class="card-text">
+                                In the progress of building the collabour project, I ran into the issue of wanting a unified API for certain common resources - specifially currencies, languages and countries, to begin with.
+                                As I was sure using these resources wouldn't be a one time thing, I decided to build an API for it.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-title">
+                                <h4><a href="https://github.com/Collabour">Collabour</a></h4>
                             </div>
                             <div class="card-text">
                                 <p>An application and website to find resources for and keep track of small to medium sized projects</p>
                                 <ul>
                                     <li>
-                                        <h4>Packages <small>🔓🔑</small></h4>
+                                        <h5>Packages <small>🔓🔑</small></h5>
                                         <ul>
                                             <li>Shared - The basic collection of classes and resources that will be returned by the API and used for display on the website <small>Progress: 90%</small></li>
                                             <li>SDK - A .Net SDK to interact with the Collabour API <small>Progress: 90%</small></li>
@@ -120,14 +132,14 @@
                                         </ul>
                                     </li>
                                     <li>
-                                        <h4>Frontend <small>🔓🔑</small></h4>
+                                        <h5>Frontend <small>🔓🔑</small></h5>
                                         <ul>
                                             <li>Website - The main Collabour .Net website using the Collabour SDK <small>Progress: 70%</small></li>
                                             <li>API - The REST API to get data of the Collabour application <small>Progress: 60%</small></li>
                                         </ul>
                                     </li>
                                     <li>
-                                        <h4>Backend <small>🔒</small></h4>
+                                        <h5>Backend <small>🔒</small></h5>
                                         <ul>
                                             <li>Lib - A collection of services to call get and transform data in the database <small>Progress: 80%</small></li>
                                             <li>DB - An EF Core / PostgreSQL database <small>Progress: 90%</small></li>
@@ -142,7 +154,7 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="card-title">
-                                <h3>Others</h3>
+                                <h4>Others</h4>
                             </div>
                             <div class="card-text">
                                 Other Ideas are in the backlog, but I'm trying to avoid scope creep and focus on the current projects
@@ -159,15 +171,15 @@
             </button>
         </div>
         <div class="section">
-            <h2>Misc</h2>
-            <h3>Symbols</h3>
+            <h3>Misc</h3>
+            <h4>Symbols</h4>
             <ul class="no-style">
                 <li><small>☭ - completly open source. free to fork, modify and use for anyone however they wish</small></li>
                 <li><small>🔓 - open source, but with an <a href="https://creativecommons.org/licenses/by-sa/4.0/">attribution licence</a></small></li>
                 <li><small>🔑 - private until fully tested and released</small></li>
                 <li><small>🔒 - private with no current plans to release publicly</small></li>
             </ul>
-            <h3>Sources</h3>
+            <h4>Sources</h4>
             <ul class="no-style">
                 <li id="source1"><small>🕮 - <a href="https://en.wikipedia.org/wiki/Unobtainium">Perfection</a></small></li>
             </ul>
