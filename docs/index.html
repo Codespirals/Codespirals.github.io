@@ -32,22 +32,17 @@
             <p>
                 These modules are denoted with the name "Codespirals.[Module name]".
             </p>
-            <h4>The main module:</h4>
-            <div>
-                <h5>Codespirals.[Module].Shared</h5>
-                <p>
-                    The main module. These define the very basic classes and interfaces of the entire library in a NuGet package that is then imported by all other submodules.
-                </p>
-            </div>
         </div>
         <div class="section">
             <h3>Solutions:</h3>
             <p>
                 Solution modules are next-to-fully implemented programs that can be attached to other projects to expedite frequently required functionalities like payment processing or mailing.
             </p>
-            <h4>Structure</h4>
             <p>
-                While largely unique to the individual solution, most share a few commonalities (though they are not required to):
+                A solution has the name "Codespirals.Solution.[Solution name]".
+            </p>
+            <p>
+                They contain the following:
             </p>
             <div>
                 <h5>Services</h5>
@@ -57,7 +52,7 @@
                         OtherClass(IService service)
                     </code>
                 </p>
-                <h5>Options Model</h5>
+                <h5>The Options Model</h5>
                 <p>
                     A class that contains all the options that can be individualised in a project, which are required to use the solution.
                     This is a POGO class that mirrors the options set in the appsettings.json file (or similar).
@@ -71,16 +66,12 @@
                 <h5>App builder extension</h5>
                 <p>
                     One or more methods to add the solution to the IServiceCollection and IApplicationBuilder (usually in the Startup.cs file).
-                    If the solution contains only a single service, this is usually omitted.
                 </p>
                 <h5>Other interfaces, models and extensions</h5>
                 <p>
                     The simple models and exceptions that make sure the solution is as self contained as possible.
                 </p>
             </div>
-        </div>
-        <div class="section">
-            <h3>Solutions:</h3>
         </div>
         <div class="section">
             <h3>Current generic codespirals libraries:</h3>
@@ -108,8 +99,34 @@
                                 <h4>Resource-api</h4>
                             </div>
                             <div class="card-text">
-                                In the progress of building the collabour project, I ran into the issue of wanting a unified API for certain common resources - specifially currencies, languages and countries, to begin with.
-                                As I was sure using these resources wouldn't be a one time thing, I decided to build an API for it.
+                                <p>
+                                    In the progress of building the Collabour project, I ran into the issue of wanting a unified API for certain common resources - specifially currencies, languages and countries, to begin with.
+                                    As I was sure using these resources wouldn't be a one time thing, I decided to build an API for it.
+                                </p>
+                                <ul>
+                                    <li>
+                                        <h5>Packages <small>🔓☭</small></h5>
+                                        <ul>
+                                            <li>Shared - The basic collection of classes and resources that will be returned by the API and used for display on the website <small>Progress: 100%</small></li>
+                                            <li>SDK - A .Net SDK to interact with the API more easily <small>Progress: 100%</small></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <h5>Backend <small>🔓☭</small></h5>
+                                        <ul>
+                                            <li>API - The REST API to get the resources <small>Progress: 90%</small></li>
+                                            <li>Lib - A collection of services to call get and transform data in the database <small>Progress: 90%</small></li>
+                                            <li>DB - An EF Core / PostgreSQL database <small>Progress: 100%</small></li>
+                                            <li>Scheduler - A task scheduler to update certain resources, like currency rates <small>Progress: 30%</small></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <h5>Modules used</h5>
+                                <ul>
+                                    <li>Codespirals.Base</li>
+                                    <li>Codespirals.Solutions.ApiCaller - For SDK</li>
+                                    <li>Codespirals.Solutions.Mail - For API signup</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -128,21 +145,20 @@
                                         <ul>
                                             <li>Shared - The basic collection of classes and resources that will be returned by the API and used for display on the website <small>Progress: 90%</small></li>
                                             <li>SDK - A .Net SDK to interact with the Collabour API <small>Progress: 90%</small></li>
-                                            <li>Mock - A very simple data mocker implementing the SDK to simulate API calls returning semi-randomly generated mock objects for testing purposes <small>Progress: 90%</small></li>
                                         </ul>
                                     </li>
                                     <li>
                                         <h5>Frontend <small>🔓🔑</small></h5>
                                         <ul>
                                             <li>Website - The main Collabour .Net website using the Collabour SDK <small>Progress: 70%</small></li>
-                                            <li>API - The REST API to get data of the Collabour application <small>Progress: 60%</small></li>
                                         </ul>
                                     </li>
                                     <li>
                                         <h5>Backend <small>🔒</small></h5>
                                         <ul>
+                                            <li>API - The REST API to get data of the Collabour application <small>Progress: 60%</small></li>
                                             <li>Lib - A collection of services to call get and transform data in the database <small>Progress: 80%</small></li>
-                                            <li>DB - An EF Core / PostgreSQL database <small>Progress: 90%</small></li>
+                                            <li>DB - An EF Core / PostgreSQL database <small>Progress: 100%</small></li>
                                         </ul>
                                     </li>
                                 </ul>
