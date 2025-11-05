@@ -56,25 +56,52 @@
             <div>
                 <h3>Services</h3>
                 <p>
-                    A set of [...]Service classes and interfaces that implement the functionality of the solution, which can be used via dependency injection.
+                    A set of [...]Service classes and interfaces that implement the functionality of the solution, which can be used via <a href="https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection">dependency injection</a>.
+                    These services are defined by an interface of the same name.
+                    <code>
+                        public class AbcService : IAbcService
+                        {
+                        [Custom functions]
+                        }
+                    </code>
+                </p>
+                <p>
+                    Via the service collection of the application builder, this service is then registered (usually in a file named Programm or Startup).
+                    <code>
+                        bulder.Services.AddService&lt;IAbcService, AbcService&gt;();
+                    </code>
+                </p>
+                <p>
+                    And finally, any class in the application that needs methods this service provides it can be used through common Dependency Injection
                     <code>
                         OtherClass(IService service)
                     </code>
                 </p>
-                <h3>The Options Model</h3>
+                <h3>The Options Pattern</h3>
                 <p>
                     A class that contains all the options that can be individualised in a project, which are required to use the solution.
-                    This is a POGO class that mirrors the options set in the appsettings.json file (or similar).
+                    This is a POGO class that mirrors the options set in the appsettings.json file (or similar), which would look a bit like this:
+                    <code>
+                        {
+                        AbcOptions:{
+                            Name:"AbcService",
+                            Version:"1.0.1"
+                            }
+                        }
+                    </code>
+
                 </p>
                 <p>
-                    This class will be used to inject settings into services via
+                    Just like the services, we then have to register these options in the applications builder
                     <code>
-                        Service(IOptions<OptionsModel> options)
+                        builder.Services.Configure&lt;AbcOptions&gt;(builder.Configuration.GetSection(nameof(AbcOptions));
                     </code>
                 </p>
-                <h3>App builder extension</h3>
                 <p>
-                    One or more methods to add the solution to the IServiceCollection and IApplicationBuilder (usually in the Startup.cs file).
+                    This options class will be used to inject settings into other services and classes via
+                    <code>
+                        Service(IOptions&lt;AbcOptions&gt; options)
+                    </code>
                 </p>
                 <h3>Other interfaces, models and extensions</h3>
                 <p>
