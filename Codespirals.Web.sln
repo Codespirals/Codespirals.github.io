@@ -17,6 +17,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Images", "Images", "{8BE1B048-0487-4DF6-9DB8-C60F4608F0E3}"
 	ProjectSection(SolutionItems) = preProject
 		docs\Images\favicon.png = docs\Images\favicon.png
+		..\Codespirals.Base\Codespirals.Base.Shared\Resources\Images\logo.png = ..\Codespirals.Base\Codespirals.Base.Shared\Resources\Images\logo.png
 	EndProjectSection
 EndProject
 Global
