@@ -128,102 +128,102 @@ AbcOptions:{
         </div>
         <div class="section">
             <h2>Projects these modules are used in:</h2>
-        </div>
-        <div id="carouselProjects" class="carousel slide">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="card-title">
-                                <h3>Resource-api</h3>
+            <div id="carouselProjects" class="carousel slide">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-title">
+                                    <h3>Resource-api</h3>
+                                </div>
+                                <div class="card-text">
+                                    <p>
+                                        In the build-progress of building the Collabour project, I ran into the issue of wanting a unified API for certain common resources - specifially currencies, languages and countries, to begin with.
+                                        As I was sure using these resources wouldn't be a one time thing, I decided to build an API for it.
+                                    </p>
+                                    <ul>
+                                        <li>
+                                            <h4>Packages <small>🔓☭</small></h4>
+                                            <ul>
+                                                <li>Shared - The basic collection of classes and resources that will be returned by the API and used for display on the website <div class="build-progress green" data-bs-toggle="tooltip" data-bs-title="build-progress: 100%">●</div></li>
+                                                <li>SDK - A .Net SDK to interact with the API more easily <div class="build-progress green" data-bs-toggle="tooltip" data-bs-title="build-progress: 100%">●</div></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <h4>Backend <small>🔓☭</small></h4>
+                                            <ul>
+                                                <li>API - The REST API to get the resources <div class="build-progress orange" data-bs-toggle="tooltip" data-bs-title="build-progress: 90%">●</div></li>
+                                                <li>Lib - A collection of services to call get and transform data in the database <div class="build-progress orange" data-bs-toggle="tooltip" data-bs-title="build-progress: 90%">●</div></li>
+                                                <li>DB - An EF Core / PostgreSQL database <div class="build-progress green" data-bs-toggle="tooltip" data-bs-title="build-progress: 100%">●</div></li>
+                                                <li>Scheduler - A task scheduler to update certain resources, like currency rates <div class="build-progress red" data-bs-toggle="tooltip" data-bs-title="build-progress: 30%">●</div></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <h4>Modules used</h4>
+                                    <ul>
+                                        <li>Codespirals.Base</li>
+                                        <li>Codespirals.Solutions.ApiCaller - For SDK</li>
+                                        <li>Codespirals.Solutions.Mail - For API signup</li>
+                                    </ul>
+                                </div>
                             </div>
-                            <div class="card-text">
-                                <p>
-                                    In the build-progress of building the Collabour project, I ran into the issue of wanting a unified API for certain common resources - specifially currencies, languages and countries, to begin with.
-                                    As I was sure using these resources wouldn't be a one time thing, I decided to build an API for it.
-                                </p>
-                                <ul>
-                                    <li>
-                                        <h4>Packages <small>🔓☭</small></h4>
-                                        <ul>
-                                            <li>Shared - The basic collection of classes and resources that will be returned by the API and used for display on the website <div class="build-progress green" data-bs-toggle="tooltip" data-bs-title="build-progress: 100%">●</div></li>
-                                            <li>SDK - A .Net SDK to interact with the API more easily <div class="build-progress green" data-bs-toggle="tooltip" data-bs-title="build-progress: 100%">●</div></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <h4>Backend <small>🔓☭</small></h4>
-                                        <ul>
-                                            <li>API - The REST API to get the resources <div class="build-progress orange" data-bs-toggle="tooltip" data-bs-title="build-progress: 90%">●</div></li>
-                                            <li>Lib - A collection of services to call get and transform data in the database <div class="build-progress orange" data-bs-toggle="tooltip" data-bs-title="build-progress: 90%">●</div></li>
-                                            <li>DB - An EF Core / PostgreSQL database <div class="build-progress green" data-bs-toggle="tooltip" data-bs-title="build-progress: 100%">●</div></li>
-                                            <li>Scheduler - A task scheduler to update certain resources, like currency rates <div class="build-progress red" data-bs-toggle="tooltip" data-bs-title="build-progress: 30%">●</div></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                                <h4>Modules used</h4>
-                                <ul>
-                                    <li>Codespirals.Base</li>
-                                    <li>Codespirals.Solutions.ApiCaller - For SDK</li>
-                                    <li>Codespirals.Solutions.Mail - For API signup</li>
-                                </ul>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-title">
+                                    <h3><a href="https://github.com/Collabour">Collabour</a></h3>
+                                </div>
+                                <div class="card-text">
+                                    <p>An application and website to find resources for and keep track of small to medium sized projects</p>
+                                    <ul>
+                                        <li>
+                                            <h4>Packages <small>🔓🔑</small></h4>
+                                            <ul>
+                                                <li>Shared - The basic collection of classes and resources that will be returned by the API and used for display on the website <div class="build-progress orange" data-bs-toggle="tooltip" data-bs-title="build-progress: 80%">●</div></li>
+                                                <li>SDK - A .Net SDK to interact with the Collabour API <div class="build-progress orange" data-bs-toggle="tooltip" data-bs-title="build-progress: 90%">●</div></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <h4>Frontend <small>🔓🔑</small></h4>
+                                            <ul>
+                                                <li>Website - The main Collabour .Net website using the Collabour SDK <div class="build-progress orange" data-bs-toggle="tooltip" data-bs-title="build-progress: 70%">●</div></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <h4>Backend <small>🔒</small></h4>
+                                            <ul>
+                                                <li>API - The REST API to get data of the Collabour application <div class="build-progress red" data-bs-toggle="tooltip" data-bs-title="build-progress: 60%">●</div></li>
+                                                <li>Lib - A collection of services to call get and transform data in the database <div class="build-progress orange" data-bs-toggle="tooltip" data-bs-title="build-progress: 80%">●</div></li>
+                                                <li>DB - An EF Core / PostgreSQL database <div class="build-progress green" data-bs-toggle="tooltip" data-bs-title="build-progress: 100%">●</div></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-title">
+                                    <h3>Others</h3>
+                                </div>
+                                <div class="card-text">
+                                    Other Ideas are in the backlog, but I'm trying to avoid scope creep and focus on the current projects
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="carousel-item">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="card-title">
-                                <h3><a href="https://github.com/Collabour">Collabour</a></h3>
-                            </div>
-                            <div class="card-text">
-                                <p>An application and website to find resources for and keep track of small to medium sized projects</p>
-                                <ul>
-                                    <li>
-                                        <h4>Packages <small>🔓🔑</small></h4>
-                                        <ul>
-                                            <li>Shared - The basic collection of classes and resources that will be returned by the API and used for display on the website <div class="build-progress orange" data-bs-toggle="tooltip" data-bs-title="build-progress: 80%">●</div></li>
-                                            <li>SDK - A .Net SDK to interact with the Collabour API <div class="build-progress orange" data-bs-toggle="tooltip" data-bs-title="build-progress: 90%">●</div></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <h4>Frontend <small>🔓🔑</small></h4>
-                                        <ul>
-                                            <li>Website - The main Collabour .Net website using the Collabour SDK <div class="build-progress orange" data-bs-toggle="tooltip" data-bs-title="build-progress: 70%">●</div></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <h4>Backend <small>🔒</small></h4>
-                                        <ul>
-                                            <li>API - The REST API to get data of the Collabour application <div class="build-progress red" data-bs-toggle="tooltip" data-bs-title="build-progress: 60%">●</div></li>
-                                            <li>Lib - A collection of services to call get and transform data in the database <div class="build-progress orange" data-bs-toggle="tooltip" data-bs-title="build-progress: 80%">●</div></li>
-                                            <li>DB - An EF Core / PostgreSQL database <div class="build-progress green" data-bs-toggle="tooltip" data-bs-title="build-progress: 100%">●</div></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="card-title">
-                                <h3>Others</h3>
-                            </div>
-                            <div class="card-text">
-                                Other Ideas are in the backlog, but I'm trying to avoid scope creep and focus on the current projects
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselProjects" data-bs-slide="prev">
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselProjects" data-bs-slide="next">
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselProjects" data-bs-slide="prev">
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselProjects" data-bs-slide="next">
-                <span class="visually-hidden">Next</span>
-            </button>
         </div>
         <div class="section">
             <h4>Misc</h4>
