@@ -119,10 +119,6 @@ small {
 	color: var(--color-foreground-muted);
 }
 
-small .progress {
-	display: block;
-}
-
 .progress .green {
 	color: green;
 }
