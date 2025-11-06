@@ -119,13 +119,17 @@ small {
 	color: var(--color-foreground-muted);
 }
 
-.build-progress .green {
+.build-progress {
+	display: inline;
+}
+
+.build-progress.green {
 	color: green;
 }
-.build-progress .orange {
+.build-progress.orange {
 	color: orange;
 }
-.build-progress .red {
+.build-progress.red {
 	color: red;
 }
 
