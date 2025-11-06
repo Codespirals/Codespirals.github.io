@@ -130,6 +130,7 @@ code {
 	background-color: var(--color-contrast-0);
 	border-radius: 0.25rem;
 	overflow-x: scroll;
+	white-space: nowrap;
 }
 
 .section {
