@@ -60,12 +60,12 @@
                     A set of [...]Service classes and interfaces that implement the functionality of the solution, which can be used via <a href="https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection">dependency injection</a>.
                     These services are defined by an interface of the same name.
                 </p>
-                <pre><code>
+                <code><pre>
                 public class AbcService : IAbcService
                 {
                      [Custom functions]
                 }
-                </code></pre>
+                </pre></code>
                 <p>
                     Via the service collection of the application builder, this service is then registered (usually in a file named Programm or Startup).
                     <code>
@@ -84,14 +84,14 @@
                     A class that contains all the options that can be individualised in a project, which are required to use the solution.
                     This is a POGO class that mirrors the options set in the appsettings.json file (or similar), which would look a bit like this:
                 </p>
-                <pre><code>
+                <code><pre>
                 {
                 AbcOptions:{
                      Name:"AbcService",
                      Version:"1.0.1"
                      }
                 }
-                </code></pre>
+                </pre></code>
                 <p>
                     Just like the services, we then have to register these options in the applications builder
                     <code>

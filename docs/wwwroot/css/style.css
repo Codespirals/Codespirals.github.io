@@ -133,6 +133,10 @@ small {
 	color: red;
 }
 
+pre {
+	margin: 0;
+}
+
 code {
 	color: var(--color-primary);
 	display: block;
