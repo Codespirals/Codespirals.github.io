@@ -58,38 +58,38 @@
                 <p>
                     A set of [...]Service classes and interfaces that implement the functionality of the solution, which can be used via <a href="https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection">dependency injection</a>.
                     These services are defined by an interface of the same name.
-                    <code>
-                        public class AbcService : IAbcService<br />
-                        {<br />
-                        &nbsp;&nbsp;&nbsp;&nbsp;[Custom functions]<br />
+                    <pre><code>
+                        public class AbcService : IAbcService
+                        {
+                            [Custom functions]
                         }
-                    </code>
+                    </code></pre>
                 </p>
                 <p>
                     Via the service collection of the application builder, this service is then registered (usually in a file named Programm or Startup).
                     <code>
                         builder.Services.AddService&lt;IAbcService, AbcService&gt;();
                     </code>
+                    Usually a custom extension method for IServiceCollection is provided to make that step easier.
                 </p>
                 <p>
                     And finally, any class in the application that needs methods this service provides it can be used through common Dependency Injection
                     <code>
-                        OtherClass(IService service)
+                        OtherClass(IAbcService abcService)
                     </code>
                 </p>
                 <h3>The Options Pattern</h3>
                 <p>
                     A class that contains all the options that can be individualised in a project, which are required to use the solution.
                     This is a POGO class that mirrors the options set in the appsettings.json file (or similar), which would look a bit like this:
-                    <code>
-                        {<br />
-                        &nbsp;&nbsp;&nbsp;&nbsp;AbcOptions:{<br />
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name:"AbcService",<br />
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Version:"1.0.1"<br />
-                        &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                    <pre><code>
+                        {
+                            AbcOptions:{
+                                Name:"AbcService",
+                                Version:"1.0.1"
+                            }
                         }
-                    </code>
-
+                    </code></pre>
                 </p>
                 <p>
                     Just like the services, we then have to register these options in the applications builder
@@ -237,8 +237,11 @@
             </ul>
             <h5>Footnotes</h5>
             <ol>
-                <li id="footnote1"><small>I do rarely use AI in one shot scripts in my library, like one I used to download tables from wikipedia.
-                    Such entirely non-critical, throw away scripts are the limit of what I trust AI to do, where my laziness to write the script trumps my disdain for AI.</small>
+                <li id="footnote1">
+                    <small>
+                        I do rarely use AI in one shot scripts in my library, like one I used to download tables from wikipedia.
+                        Such entirely non-critical, throw away scripts are the limit of what I trust AI to do, where my laziness to write the script trumps my disdain for AI.
+                    </small>
                 </li>
             </ol>
         </div>
