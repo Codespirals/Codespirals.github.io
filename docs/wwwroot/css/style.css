@@ -63,7 +63,7 @@ footer {
 }
 
 .footer-content {
-	padding: 0.125rem 0.25rem;
+	padding: 0 0.25rem;
 }
 
 h1, h2, h3, h4, h5 {
@@ -156,6 +156,13 @@ code {
 
 .carousel {
 	min-height: 200px;
+}
+
+.carousel-item {
+	padding: 0 1rem;
+}
+.carousel-control {
+	width: 1rem;
 }
 
 .card {
