@@ -163,6 +163,7 @@ code {
 }
 .carousel-control {
 	width: 1rem;
+	background-color: var(--color-contrast-1);
 }
 
 .card {
