@@ -156,6 +156,8 @@ code {
 
 .carousel {
 	min-height: 200px;
+	border-top: solid 0.25rem var(--color-contrast-1);
+	border-bottom: solid 0.25rem var(--color-contrast-1);
 }
 
 .carousel-item {
