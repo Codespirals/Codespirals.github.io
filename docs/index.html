@@ -18,9 +18,9 @@
     <main>
         <div class="section">
             <div class="center">
-                <img src="Images/logo.png" />
+                <img id="top-of-page" src="Images/logo.png" alt="A poorly doodled spiral in which one swirl is highlighted as the 'c' from codespirals." />
             </div>
-            <h2 id="top-of-page" class="center">Welcome</h2>
+            <h2 class="center">Welcome</h2>
             <p>
                 Hi! Thanks for checking out my dev page.
             </p>
@@ -155,7 +155,7 @@ AbcOptions:{
                                             <h4>Backend <small><a href="#symbol-attributed">🔓</a><a href="#symbol-communal">☭</a></small></h4>
                                             <ul>
                                                 <li>API - The REST API to get the resources <div class="build-progress orange" data-bs-toggle="tooltip" data-bs-title="build-progress: 90%">●</div></li>
-                                                <li>Lib - A collection of services to call get and transform data in the database <div class="build-progress orange" data-bs-toggle="tooltip" data-bs-title="build-progress: 90%">●</div></li>
+                                                <li>Lib - The main module with most of the actual code <div class="build-progress orange" data-bs-toggle="tooltip" data-bs-title="build-progress: 90%">●</div></li>
                                                 <li>DB - An EF Core / PostgreSQL database <div class="build-progress green" data-bs-toggle="tooltip" data-bs-title="build-progress: 100%">●</div></li>
                                                 <li>Scheduler - A task scheduler to update certain resources, like currency rates <div class="build-progress red" data-bs-toggle="tooltip" data-bs-title="build-progress: 30%">●</div></li>
                                             </ul>
@@ -164,6 +164,7 @@ AbcOptions:{
                                     <h4>Modules used</h4>
                                     <ul>
                                         <li>Codespirals.Base</li>
+                                        <li>Codespirals.Common - As a basis of the entire project</li>
                                         <li>Codespirals.Solutions.ApiCaller - For SDK</li>
                                         <li>Codespirals.Solutions.Mail - For API signup</li>
                                     </ul>
@@ -197,7 +198,7 @@ AbcOptions:{
                                             <h4>Backend <small><a href="#symbol-private">🔒</a></small></h4>
                                             <ul>
                                                 <li>API - The REST API to get data of the Collabour application <div class="build-progress red" data-bs-toggle="tooltip" data-bs-title="build-progress: 60%">●</div></li>
-                                                <li>Lib - A collection of services to call get and transform data in the database <div class="build-progress orange" data-bs-toggle="tooltip" data-bs-title="build-progress: 80%">●</div></li>
+                                                <li>Lib - The main module with most of the actual code <div class="build-progress orange" data-bs-toggle="tooltip" data-bs-title="build-progress: 80%">●</div></li>
                                                 <li>DB - An EF Core / PostgreSQL database <div class="build-progress green" data-bs-toggle="tooltip" data-bs-title="build-progress: 100%">●</div></li>
                                             </ul>
                                         </li>
@@ -244,10 +245,10 @@ AbcOptions:{
             <h4>Misc</h4>
             <h5>Symbols</h5>
             <ul class="no-style">
-                <li id="symbol-communal"><small><a href="#symbol-communal">☭</a> - is, or will be released with a CC0 licence, free for anyone to use, modify and use for anyone however they wish</small></li>
-                <li id="symbol-attributed"><small><a href="#symbol-attributed">🔓</a> - open source, but with an <a href="https://creativecommons.org/licenses/by-sa/4.0/">attribution licence</a></small></li>
-                <li id="symbol-locked"><small><a href="#symbol-locked">🔑</a> - private until fully tested and released</small></li>
-                <li id="symbol-private"><small><a href="#symbol-private">🔒</a> - private with no current plans to release publicly</small></li>
+                <li id="symbol-communal"><small>☭ - is, or will be released with a CC0 licence, free for anyone to use, modify and use for anyone however they wish</small></li>
+                <li id="symbol-attributed"><small>🔓 - open source, but with an <a href="https://creativecommons.org/licenses/by-sa/4.0/">attribution licence</a></small></li>
+                <li id="symbol-locked"><small>🔑 - private until fully tested and released</small></li>
+                <li id="symbol-private"><small>🔒 - private with no current plans to release publicly</small></li>
             </ul>
             <h5>Sources</h5>
             <ul class="no-style">
@@ -257,7 +258,7 @@ AbcOptions:{
             <ol>
                 <li id="footnote1">
                     <small>
-                        I do rarely use AI in one shot scripts in my library, like one I used to download tables from wikipedia.
+                        Very occasionally, I use AI in one shot scripts in my library, like one I used to download tables from wikipedia.
                         Such entirely non-critical, throw away scripts are the limit of what I trust AI to do, where my laziness to write the script trumps my disdain for AI.
                     </small>
                 </li>
@@ -266,7 +267,7 @@ AbcOptions:{
     </main>
     <footer>
         <div class="footer-content">
-            &copy;codespirals <span id="currentYear"></span> <span class="right"><a href="#top-of-page">↑</a> <a href="mailto:admin@codespirals.dev">✉</a></span>
+            &copy;codespirals <span id="currentYear"></span> <span class="right"><a href="#top-of-page">⇈</a> <a href="mailto:admin@codespirals.dev">✉</a></span>
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
