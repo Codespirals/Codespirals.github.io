@@ -16,11 +16,11 @@
         </div>
     </header>
     <main>
+        <div class="center">
+            <img id="top-of-page" src="Images/logo.png" alt="A poorly doodled spiral in which one swirl is highlighted as the 'c' from codespirals." />
+        </div>
+        <h2 class="center">Welcome</h2>
         <div class="section">
-            <div class="center">
-                <img id="top-of-page" src="Images/logo.png" alt="A poorly doodled spiral in which one swirl is highlighted as the 'c' from codespirals." />
-            </div>
-            <h2 class="center">Welcome</h2>
             <p>
                 Hi! Thanks for checking out my dev page.
             </p>
@@ -42,6 +42,20 @@
             <p>
                 These modules are denoted with the name "Codespirals.[Module name]".
             </p>
+            <p>
+                At the root of them all is the "Codespirals.Base" Module. This module contains interfaces, attributes and classes used in pretty much all other projects, like an interface (seen below) and implementation for the Result Pattern which I like to use a lot.
+            </p>
+            <code>
+<pre>
+public interface IResult&lt;TSelf, TErrorCode&gt;
+    where TSelf : IResult&lt;TSelf, TErrorCode&gt;
+{
+    public bool Success { get; }
+    public TErrorCode? ErrorCode { get; }
+    public string Error { get; }
+    public abstract static TSelf Fail(string error, TErrorCode? errorCode = default);
+}</pre>
+            </code>
         </div>
         <div class="section">
             <h2>Solutions:</h2>
@@ -225,7 +239,7 @@ AbcOptions:{
                                         Other Ideas are in the backlog, but I'm trying to avoid scope creep and focus on the current projects.
                                     </p>
                                     <p>
-                                        The Collabour project is basically my attempt to give myself a space where I can catalogue and prioritize project ideas 
+                                        The Collabour project is basically my attempt to give myself a space where I can catalogue and prioritize project ideas
                                         - or give them away, should I come to believe I can't do them.
                                     </p>
                                 </div>
@@ -252,7 +266,9 @@ AbcOptions:{
             </ul>
             <h5>Sources</h5>
             <ul class="no-style">
-                <li id="source1"><small>🕮 - <a href="https://learn.microsoft.com/en-us/dotnet/csharp/">Microsoft C# docs</a></small></li>
+                <li id="source1">
+                    <small>🕮 - <a href="https://learn.microsoft.com/en-us/dotnet/csharp/">Microsoft C# docs</a></small>
+                </li>
             </ul>
             <h5>Footnotes</h5>
             <ol>

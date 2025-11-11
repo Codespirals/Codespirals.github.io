@@ -158,7 +158,7 @@ code {
 }
 
 .carousel {
-	min-height: 400px;
+	min-height: max-content;
 	border: none;
 }
 
