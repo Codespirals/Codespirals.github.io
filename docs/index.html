@@ -35,7 +35,7 @@
             </p>
         </div>
         <div class="section">
-            <h2>Modules:</h2>
+            <h2>Libraries:</h2>
             <p>
                 A codespirals library module is a set of mostly abstract code made for a specific purpose, which is usually described by the module's name and README.
             </p>
@@ -43,19 +43,21 @@
                 These modules are denoted with the name "Codespirals.[Module name]".
             </p>
             <p>
-                At the root of them all is the "Codespirals.Base" Module. This module contains interfaces, attributes and classes used in pretty much all other projects, like an interface (seen below) and implementation for the Result Pattern which I like to use a lot.
+                At the root of them all is the "Codespirals.Base" Module. This module contains interfaces, attributes and classes used in pretty much all other projects, like an implementation for the Result Pattern (seen below) which I like to use a lot.
             </p>
             <code>
-<pre>
-public interface IResult&lt;TSelf, TErrorCode&gt;
-    where TSelf : IResult&lt;TSelf, TErrorCode&gt;
+                <pre>
+public class Result&lt;T&gt;
 {
     public bool Success { get; }
     public TErrorCode? ErrorCode { get; }
     public string Error { get; }
-    public abstract static TSelf Fail(string error, TErrorCode? errorCode = default);
+    public T Data { get; }
 }</pre>
             </code>
+            <p>
+                Since libraries here are more abstract, they only contain a few concrete methods that I know I'd use in multiple projects but don't want to implement again and again.
+            </p>
         </div>
         <div class="section">
             <h2>Solutions:</h2>
@@ -63,7 +65,7 @@ public interface IResult&lt;TSelf, TErrorCode&gt;
                 Solution modules are next-to-fully implemented programs that can be attached to other projects to expedite frequently required functionalities like payment processing or mailing.
             </p>
             <p>
-                A solution has the name "Codespirals.Solution.[Solution name]".
+                A solution has the name "Codespirals.Solution.[Solution name]" and build on the code in library modules. 
             </p>
             <p>
                 They contain the following:
