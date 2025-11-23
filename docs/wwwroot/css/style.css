@@ -225,3 +225,8 @@ li {
 .w15 {
 	width: 15%;
 }
+
+.footnote {
+	font-size: 0.625rem;
+	color: var(--color-foreground-muted);
+}
