@@ -152,14 +152,16 @@ code {
 
 .section {
 	padding: 0.125rem 0.25rem;
-	border-top: solid 0.125rem var(--color-contrast-2);
 	border-bottom: solid 0.125rem var(--color-contrast-2);
-	border-collapse: collapse;
 }
 
 .carousel {
-	min-height: max-content;
 	border: none;
+	border-bottom: solid 0.125rem var(--color-contrast-2);
+}
+
+.carousel-inner {
+	height: max-content;
 }
 
 .carousel-item {
