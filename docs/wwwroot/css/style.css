@@ -7,6 +7,7 @@
 	--color-contrast-0: #000;
 	--color-contrast-1: #222;
 	--color-contrast-2: #333;
+	--color-contrast-3: #666;
 	--color-shadow: rgba(255,255,255,0.5);
 }
 
@@ -19,6 +20,7 @@
 		--color-contrast-0: #eee;
 		--color-contrast-1: #ddd;
 		--color-contrast-2: #ccc;
+		--color-contrast-3: #999;
 		--color-shadow: rgba(0,0,0,0.5);
 	}
 }
@@ -169,7 +171,8 @@ code {
 }
 .carousel-control {
 	width: 1rem;
-	background-color: var(--color-contrast-1);
+	color: var(--color-foreground);
+	background-color: var(--color-contrast-2);
 }
 
 .card {
