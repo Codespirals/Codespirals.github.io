@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="wwwroot/css/style.css" />
+    <link rel="icon" type="image/png" sizes="16x16" href="Images/favicon.png">
+    <title>Codespirals</title>
+</head>
+<body>
+    <header>
+        <div class="center">
+            <h1><a href="https://github.com/Codespirals">codespirals</a></h1>
+        </div>
+    </header>
+    <main>
+        <div id="top-of-page"></div>
+        <div class="center">
+            <img src="Images/logo.png" alt="A poorly doodled spiral in which one swirl is highlighted as the 'c' from codespirals." />
+        </div>
+        <div class="section">
+            <h2>Libraries:</h2>
+            <p>
+                A codespirals library module is a set of mostly abstract code made for a specific purpose, which is usually described by the module's name and README.
+            </p>
+            <p>
+                These modules are denoted with the name "Codespirals.[Module name]".
+            </p>
+            <p>
+                At the root of them all is the "Codespirals.Base" Module. This module contains interfaces, attributes and classes used in pretty much all other projects, like an implementation for the Result Pattern (seen below) which I like to use a lot.
+            </p>
+            <code>
+                <pre>
+public class Result&lt;T&gt;
+{
+    public bool Success { get; }
+    public TErrorCode? ErrorCode { get; }
+    public string Error { get; }
+    public T Data { get; }
+}</pre>
+            </code>
+            <p>
+                Since libraries here are more abstract, they only contain a few concrete methods that I know I'd use in multiple projects but don't want to implement again and again.
+            </p>
+        </div>
+        <div class="section">
+            <h2>Solutions:</h2>
+            <p>
+                Solution modules are next-to-fully implemented programs that can be attached to other projects to expedite frequently required functionalities like payment processing or mailing.
+            </p>
+            <p>
+                A solution has the name "Codespirals.Solution.[Solution name]" and build on the code in library modules.
+            </p>
+            <p>
+                They contain the following:
+            </p>
+            <div>
+                <h3>Services</h3>
+                <p>
+                    A set of [...]Service classes and interfaces that implement the functionality of the solution, which can be used via <a href="#source-dependency-injection">dependency injection</a>.
+                    These services are defined by an interface of the same name.
+                </p>
+                <code>
+<pre>
+public class AbcService : IAbcService
+{
+    [Custom functions]
+}</pre>
+                </code>
+                <p>
+                    Via the service collection of the application builder, this service is then registered (usually in a file named Programm or Startup).
+                    <code>
+                        builder.Services.AddService&lt;IAbcService, AbcService&gt;();
+                    </code>
+                    Usually a custom extension method for IServiceCollection is provided to make that step easier.
+                </p>
+                <p>
+                    And finally, any class in the application that needs methods this service provides it can be used through common Dependency Injection
+                    <code>
+                        OtherClass(IAbcService abcService)
+                    </code>
+                </p>
+                <h3>The Options Pattern</h3>
+                <p>
+                    A class that contains all the options that can be individualised in a project, which are required to use the solution.
+                    This is a POGO class that mirrors the options set in the appsettings.json file (or similar), which would look a bit like this:
+                </p>
+                <code>
+<pre>
+{
+AbcOptions:{
+    Name:"AbcService",
+    Version:"1.0.1"
+    }
+}</pre>
+                </code>
+                <p>
+                    Just like the services, we then have to register these options in the applications builder
+                    <code>
+                        builder.Services.Configure&lt;AbcOptions&gt;(builder.Configuration.GetSection(nameof(AbcOptions));
+                    </code>
+                </p>
+                <p>
+                    This options class will be used to inject settings into other services and classes via
+                    <code>
+                        Service(IOptions&lt;AbcOptions&gt; options)
+                    </code>
+                </p>
+                <h3>Other interfaces, models and extensions</h3>
+                <p>
+                    The simple models and exceptions that make sure the solution is as self contained as possible.
+                </p>
+            </div>
+        </div>
+        <div class="section">
+            <h2>Current generic codespirals libraries:</h2>
+            <ul>
+                <li><a href="https://github.com/Codespirals/Codespirals.Base">Base</a> - A few basic interfaces that simplify some basic actions and classes. <small><a href="#symbol-commons">☭</a><a href="#symbol-locked">🔑</a></small> <div class="build-progress" data-bs-toggle="tooltip" data-bs-title="build-progress: -">●</div></li>
+                <li><a href="https://github.com/Codespirals/Codespirals.Users">Users</a> - Unified user handling for smaller projects. <small><a href="#symbol-commons">☭</a><a href="#symbol-locked">🔑</a></small> <div class="build-progress orange" data-bs-toggle="tooltip" data-bs-title="build-progress: 80%">●</div></li>
+                <li><a href="https://github.com/Codespirals/Codespirals.Common">Common</a> - A collection of frequently used items like currency, languages or countries <small><a href="#symbol-commons">☭</a><a href="#symbol-locked">🔑</a></small> <div class="build-progress green" data-bs-toggle="tooltip" data-bs-title="build-progress: 99%">●</div></li>
+            </ul>
+        </div>
+        <div class="section">
+            <h4>Misc</h4>
+            <h5>Symbols</h5>
+            <ul class="no-style">
+                <li id="symbol-commons"><small>☭ - is, or will be released with a CC0 licence, free for anyone to use, modify and use for anyone however they wish</small></li>
+                <li id="symbol-attributed"><small>🔓 - open source, but with an <a href="https://creativecommons.org/licenses/by-sa/4.0/">attribution licence</a></small></li>
+                <li id="symbol-locked"><small>🔑 - private until fully tested and released</small></li>
+                <li id="symbol-private"><small>🔒 - private with no current plans to release publicly</small></li>
+            </ul>
+            <h5>Sources</h5>
+            <ul class="no-style">
+                <li id="source1">
+                    <small>🕮 - <a href="https://learn.microsoft.com/en-us/dotnet/csharp/">Microsoft C# docs</a></small>
+                    <ul class="no-style">
+                        <li id="source-dependency-injection"><small><a href="https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection">Dependency Injection</a></small></li>
+                    </ul>
+                </li>
+            </ul>
+            <h5>Footnotes</h5>
+            <ol>
+                <li id="footnote1" class="footnote">
+                    Very occasionally, I let AI make one shot scripts in, like one I used to download tables from wikipedia.
+                    Such entirely non-critical, throw away scripts are the limit of what I trust AI to do, where my laziness to write the script is greater than my disdain for AI.
+                </li>
+            </ol>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-content">
+            &copy;codespirals <span id="currentYear"></span> <span class="right"><a href="#top-of-page">⇈</a> <a href="mailto:admin@codespirals.dev">✉</a></span>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="wwwroot/js/scripts.js"></script>
+</body>
+</html>
