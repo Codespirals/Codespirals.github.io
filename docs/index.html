@@ -18,7 +18,7 @@
     <main>
         <div id="top-of-page"></div>
         <div class="center">
-            <img src="Images/logo.png" alt="A poorly doodled spiral in which one swirl is highlighted as the 'c' from codespirals." />
+            <img src="Images/logo.png" alt="A poorly doodled spiral in which one swirl is highlighted as an orange 'c'." />
         </div>
         <h2 class="center">Welcome</h2>
         <div class="section">
@@ -26,13 +26,13 @@
                 Hi! Thanks for checking out my dev page.
             </p>
             <p>
-                Codespirals is a small solo (for now) software company from Switzerland and my goal is to create a solid foundation of code libraries and modules to build interesting and helpful projects on top of.
+                Codespirals is a small solo (for now) software company from Switzerland whose goal is to create a solid foundation of code libraries and modules to build interesting and helpful projects on top of.
             </p>
             <p>
                 I'll make whatever catches my fancy at the moment. I try to stick with the bigger projects, but sometimes I <a href="https://github.com/Codespirals/Codespirals.Poker">accidentally make a playable blackjack game</a> because I get distracted by poker card unicode characters.
             </p>
             <p>
-                I do not use AI generated code in my projects<a id="footnote1-link" href="#footnote1">*</a>. I believe it makes code sloppy and unmaintainable over time. I'm not a luddite, I sometimes use it to google when google doesn't deliver, but I don't trust AI enough to use code it makes.
+                I do not use AI generated code in my projects<a id="footnote1-link" href="#footnote1">*</a>. I believe it makes code sloppy and unmaintainable over time. I'm not a luddite, I sometimes use it to google when google doesn't deliver, but I don't trust AI enough to let it code for me.
             </p>
             <p>
                 Since I can't afford an artist and I dislike AI "art" even more than AI code, I drew the logo myself. It's not very good, but at least it was made by a human and that's good enough for me.
@@ -72,7 +72,7 @@ public class Result&lt;T&gt;
                 A solution has the name "Codespirals.Solution.[Solution name]" and build on the code in library modules.
             </p>
             <p>
-                They contain the following:
+                They usually contain one or more of the following:
             </p>
             <div>
                 <h3>Services</h3>
@@ -81,10 +81,14 @@ public class Result&lt;T&gt;
                     These services are defined by an interface of the same name.
                 </p>
                 <code>
-<pre>
+                    <pre>
+public interface IAbcService
+{
+    [Custom function definitions]
+}
 public class AbcService : IAbcService
 {
-    [Custom functions]
+    [Custom function implementations]
 }</pre>
                 </code>
                 <p>
@@ -100,7 +104,21 @@ public class AbcService : IAbcService
                         OtherClass(IAbcService abcService)
                     </code>
                 </p>
-                <h3>The Options Pattern</h3>
+                <h3>Builders</h3>
+                <p>
+                    Builders are versatile, modular helper classes that allow for easy building (duh) of objects or methods.
+                </p>
+                <p>
+                    They usually entail a way to "start" building - a method returning the builder (I usually don't allow <code>new()</code> for my builders), then all the modular methods to do the actual "building", each returning the builder themselves for method chaining, and finally a way to conclude building.
+                </p>
+                <code>
+<pre>
+public class AbcClass
+{
+    var builderResult = BuiderExample.StartBuilder().AddXX(xx).WithY(y).Build();
+}</pre>
+                </code>
+                <h3>Options</h3>
                 <p>
                     A class that contains all the options that can be individualised in a project, which are required to use the solution.
                     This is a POGO class that mirrors the options set in the appsettings.json file (or similar), which would look a bit like this:
@@ -109,8 +127,9 @@ public class AbcService : IAbcService
 <pre>
 {
 AbcOptions:{
-    Name:"AbcService",
-    Version:"1.0.1"
+    Version:"1.0.1",
+    XXXOption: 420,
+    ETC: "F"
     }
 }</pre>
                 </code>
@@ -128,7 +147,7 @@ AbcOptions:{
                 </p>
                 <h3>Other interfaces, models and extensions</h3>
                 <p>
-                    The simple models and exceptions that make sure the solution is as self contained as possible.
+                    The simple models and extensions that make sure the solution is as self contained as possible.
                 </p>
             </div>
         </div>
@@ -136,13 +155,12 @@ AbcOptions:{
             <h2>Current generic codespirals libraries:</h2>
             <ul>
                 <li><a href="https://github.com/Codespirals/Codespirals.Base">Base</a> - A few basic interfaces that simplify some basic actions and classes. <small><a href="#symbol-commons">☭</a><a href="#symbol-locked">🔑</a></small> <div class="build-progress" data-bs-toggle="tooltip" data-bs-title="build-progress: -">●</div></li>
-                <li><a href="https://github.com/Codespirals/Codespirals.Users">Users</a> - Unified user handling for smaller projects. <small><a href="#symbol-commons">☭</a><a href="#symbol-locked">🔑</a></small> <div class="build-progress orange" data-bs-toggle="tooltip" data-bs-title="build-progress: 80%">●</div></li>
                 <li><a href="https://github.com/Codespirals/Codespirals.Common">Common</a> - A collection of frequently used items like currency, languages or countries <small><a href="#symbol-commons">☭</a><a href="#symbol-locked">🔑</a></small> <div class="build-progress green" data-bs-toggle="tooltip" data-bs-title="build-progress: 99%">●</div></li>
             </ul>
             <h2>Codespirals solutions:</h2>
             <ul>
-                <li><a href="https://github.com/Codespirals/Codespirals.Solutions">Mail</a> - A service to very easily implement mailing in any project. <small><a href="#symbol-commons">☭</a><a href="#symbol-locked">🔑</a></small> <div class="build-progress green" data-bs-toggle="tooltip" data-bs-title="build-progress: Working, but always improving.">●</div></li>
-                <li><a href="https://github.com/Codespirals/Codespirals.Solutions">ApiCaller</a> - A small service to standardize calling an API from code. <small><a href="#symbol-commons">☭</a><a href="#symbol-locked">🔑</a></small> <div class="build-progress green" data-bs-toggle="tooltip" data-bs-title="build-progress: Working, but always improving.">●</div></li>
+                <li><a href="https://github.com/Codespirals/Codespirals.Solutions">Mail</a> - A service to very easily implement mailing in any project. <small><a href="#symbol-commons">☭</a><a href="#symbol-locked">🔑</a></small> <div class="build-progress green" data-bs-toggle="tooltip" data-bs-title="build-progress: Done, but always improving.">●</div></li>
+                <li><a href="https://github.com/Codespirals/Codespirals.Solutions">ApiCaller</a> - A small service to standardize calling an API from code. <small><a href="#symbol-commons">☭</a><a href="#symbol-locked">🔑</a></small> <div class="build-progress green" data-bs-toggle="tooltip" data-bs-title="build-progress: Done, but always improving.">●</div></li>
                 <li><a href="https://github.com/Codespirals/Codespirals.Solutions">Scheduler</a> - A package to easily add a task scheduler to a project. <small><a href="#symbol-commons">☭</a><a href="#symbol-locked">🔑</a></small> <div class="build-progress orange" data-bs-toggle="tooltip" data-bs-title="build-progress: 70%">●</div></li>
             </ul>
         </div>
