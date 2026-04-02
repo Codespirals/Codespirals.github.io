@@ -38,7 +38,7 @@ body {
 
 a, a:visited {
 	text-decoration: none;
-	color: inherit;
+	color: var(--color-foreground-muted);
 }
 
 	a:hover {
@@ -76,7 +76,7 @@ h1, h2, h3, h4, h5 {
 }
 
 h1 {
-	padding: 0.5rem 0 0 0;
+	padding: 0.25rem 0 0 0;
 	font-size: 1.5rem;
 	color: var(--color-primary);
 }
