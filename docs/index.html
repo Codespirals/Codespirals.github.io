@@ -10,11 +10,7 @@
     <title>Codespirals</title>
 </head>
 <body>
-    <header>
-        <div class="center">
-            <h1><a href="https://www.codespirals.dev">codespirals</a></h1>
-        </div>
-    </header>
+    <!--#include file="Components/header.html"-->
     <main>
         <div id="top-of-page"></div>
         <div class="center">
@@ -39,276 +35,21 @@
             </p>
         </div>
         <div class="section">
-            <h2>Libraries:</h2>
-            <p>
-                A codespirals library module is a set of mostly abstract code made for a specific purpose, which is usually described by the module's name and README.
-            </p>
-            <p>
-                These modules are denoted with the name "Codespirals.[Module name]".
-            </p>
-            <p>
-                At the root of them all is the "Codespirals.Base" Module. This module contains interfaces, attributes and classes used in pretty much all other projects, like an implementation for the Result Pattern (seen below) which I like to use a lot.
-            </p>
-            <code>
-                <pre>
-public class Result&lt;T&gt;
-{
-    public bool Success { get; }
-    public TErrorCode? ErrorCode { get; }
-    public string Error { get; }
-    public T Data { get; }
-}</pre>
-            </code>
-            <p>
-                Since libraries here are more abstract, they only contain a few concrete methods that I know I'd use in multiple projects but don't want to implement again and again.
-            </p>
+            <h3><a href="Pages/libraries.html">Libraries</a></h3>
+            <h3><a href="Pages/solutions.html">Solutions</a></h3>
         </div>
         <div class="section">
-            <h2>Solutions:</h2>
-            <p>
-                Solution modules are next-to-fully implemented programs that can be attached to other projects to expedite frequently required functionalities like payment processing or mailing.
-            </p>
-            <p>
-                A solution has the name "Codespirals.Solution.[Solution name]" and build on the code in library modules.
-            </p>
-            <p>
-                They usually contain one or more of the following:
-            </p>
-            <div>
-                <h3>Services</h3>
-                <p>
-                    A set of [...]Service classes and interfaces that implement the functionality of the solution, which can be used via <a href="#source-dependency-injection">dependency injection</a>.
-                    These services are defined by an interface of the same name.
-                </p>
-                <code>
-                    <pre>
-public interface IAbcService
-{
-    [Custom function definitions]
-}
-public class AbcService : IAbcService
-{
-    [Custom function implementations]
-}</pre>
-                </code>
-                <p>
-                    Via the service collection of the application builder, this service is then registered (usually in a file named Programm or Startup).
-                    <code>
-                        builder.Services.AddService&lt;IAbcService, AbcService&gt;();
-                    </code>
-                    Usually a custom extension method for IServiceCollection is provided to make that step easier.
-                </p>
-                <p>
-                    And finally, any class in the application that needs methods this service provides it can be used through common Dependency Injection
-                    <code>
-                        OtherClass(IAbcService abcService)
-                    </code>
-                </p>
-                <h3>Builders</h3>
-                <p>
-                    Builders are versatile, modular helper classes that allow for easy building (duh) of objects or methods.
-                </p>
-                <p>
-                    They usually entail a way to "start" building - a method returning the builder (I usually don't allow <code>new()</code> for my builders), then all the modular methods to do the actual "building", each returning the builder themselves for method chaining, and finally a way to conclude building.
-                </p>
-                <code>
-<pre>
-public class AbcClass
-{
-    var builderResult = BuiderExample.StartBuilder().AddXX(xx).WithY(y).Build();
-}</pre>
-                </code>
-                <h3>Options</h3>
-                <p>
-                    A class that contains all the options that can be individualised in a project, which are required to use the solution.
-                    This is a POGO class that mirrors the options set in the appsettings.json file (or similar), which would look a bit like this:
-                </p>
-                <code>
-<pre>
-{
-AbcOptions:{
-    Version:"1.0.1",
-    XXXOption: 420,
-    ETC: "F"
-    }
-}</pre>
-                </code>
-                <p>
-                    Just like the services, we then have to register these options in the applications builder
-                    <code>
-                        builder.Services.Configure&lt;AbcOptions&gt;(builder.Configuration.GetSection(nameof(AbcOptions));
-                    </code>
-                </p>
-                <p>
-                    This options class will be used to inject settings into other services and classes via
-                    <code>
-                        Service(IOptions&lt;AbcOptions&gt; options)
-                    </code>
-                </p>
-                <h3>Other interfaces, models and extensions</h3>
-                <p>
-                    The simple models and extensions that make sure the solution is as self contained as possible.
-                </p>
-            </div>
-        </div>
-        <div class="section">
-            <h2>Current generic codespirals libraries:</h2>
-            <ul>
-                <li><a href="https://github.com/Codespirals/Codespirals.Base">Base</a> - A few basic interfaces that simplify some basic actions and classes. <small><a href="#symbol-commons">☭</a><a href="#symbol-locked">🔑</a></small> <div class="build-progress" data-bs-toggle="tooltip" data-bs-title="build-progress: -">●</div></li>
-                <li><a href="https://github.com/Codespirals/Codespirals.Common">Common</a> - A collection of frequently used items like currency, languages or countries <small><a href="#symbol-commons">☭</a><a href="#symbol-locked">🔑</a></small> <div class="build-progress green" data-bs-toggle="tooltip" data-bs-title="build-progress: 99%">●</div></li>
-            </ul>
-            <h2>Codespirals solutions:</h2>
-            <ul>
-                <li><a href="https://github.com/Codespirals/Codespirals.Solutions">Mail</a> - A service to very easily implement mailing in any project. <small><a href="#symbol-commons">☭</a><a href="#symbol-locked">🔑</a></small> <div class="build-progress green" data-bs-toggle="tooltip" data-bs-title="build-progress: Done, but always improving.">●</div></li>
-                <li><a href="https://github.com/Codespirals/Codespirals.Solutions">ApiCaller</a> - A small service to standardize calling an API from code. <small><a href="#symbol-commons">☭</a><a href="#symbol-locked">🔑</a></small> <div class="build-progress green" data-bs-toggle="tooltip" data-bs-title="build-progress: Done, but always improving.">●</div></li>
-                <li><a href="https://github.com/Codespirals/Codespirals.Solutions">Scheduler</a> - A package to easily add a task scheduler to a project. <small><a href="#symbol-commons">☭</a><a href="#symbol-locked">🔑</a></small> <div class="build-progress orange" data-bs-toggle="tooltip" data-bs-title="build-progress: 70%">●</div></li>
-            </ul>
-        </div>
-        <div class="section">
-            <h2>Projects these modules are used in:</h2>
-        </div>
-        <div id="carouselProjects" class="carousel slide">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="card-title">
-                                <h3>Resource-api (Codespirals.Common)</h3>
-                            </div>
-                            <div class="card-text">
-                                <p>
-                                    In the build-progress of building the Collabour project, I ran into the issue of wanting a unified API for certain common resources - specifially currencies, languages and countries, to begin with.
-                                    As I was sure using these resources wouldn't be a one time thing, I decided to build that API myself.
-                                </p>
-                                <ul>
-                                    <li>
-                                        <h4>Packages <small><a href="#symbol-attributed">🔓</a><a href="#symbol-commons">☭</a></small></h4>
-                                        <ul>
-                                            <li>Shared - The basic collection of classes and resources that will be returned by the API and used for display on the website <div class="build-progress green" data-bs-toggle="tooltip" data-bs-title="build-progress: 100%">●</div></li>
-                                            <li>SDK - A .Net SDK to interact with the API more easily <div class="build-progress green" data-bs-toggle="tooltip" data-bs-title="build-progress: 100%">●</div></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <h4>Backend <small><a href="#symbol-attributed">🔓</a><a href="#symbol-commons">☭</a></small></h4>
-                                        <ul>
-                                            <li>API - The REST API to get the resources <div class="build-progress orange" data-bs-toggle="tooltip" data-bs-title="build-progress: 90%">●</div></li>
-                                            <li>Lib - The main module with most of the actual code <div class="build-progress orange" data-bs-toggle="tooltip" data-bs-title="build-progress: 90%">●</div></li>
-                                            <li>DB - An EF Core / PostgreSQL database <div class="build-progress green" data-bs-toggle="tooltip" data-bs-title="build-progress: 100%">●</div></li>
-                                            <li>Scheduler - A task scheduler to update certain resources, like currency rates <div class="build-progress red" data-bs-toggle="tooltip" data-bs-title="build-progress: 30%">●</div></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                                <h4>Modules used</h4>
-                                <ul>
-                                    <li>Codespirals.Base</li>
-                                    <li>Codespirals.Common - As a basis of the entire project</li>
-                                    <li>Codespirals.Solutions.ApiCaller - For SDK</li>
-                                    <li>Codespirals.Solutions.Mail - For API signup</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="card-title">
-                                <h3><a href="https://github.com/Collabour">Collabour</a></h3>
-                            </div>
-                            <div class="card-text">
-                                <p>An application and website to find resources for and keep track of small to medium sized projects</p>
-                                <ul>
-                                    <li>
-                                        <h4>Packages <small><a href="#symbol-attributed">🔓</a><a href="#symbol-locked">🔑</a></small></h4>
-                                        <ul>
-                                            <li>Shared - The basic collection of classes and resources that will be returned by the API and used for display on the website <div class="build-progress orange" data-bs-toggle="tooltip" data-bs-title="build-progress: 80%">●</div></li>
-                                            <li>SDK - A .Net SDK to interact with the Collabour API <div class="build-progress orange" data-bs-toggle="tooltip" data-bs-title="build-progress: 90%">●</div></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <h4>Frontend <small><a href="#symbol-attributed">🔓</a><a href="#symbol-locked">🔑</a></small></h4>
-                                        <ul>
-                                            <li>Website - The main Collabour .Net website using the Collabour SDK <div class="build-progress orange" data-bs-toggle="tooltip" data-bs-title="build-progress: 70%">●</div></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <h4>Backend <small><a href="#symbol-private">🔒</a></small></h4>
-                                        <ul>
-                                            <li>API - The REST API to get data of the Collabour application <div class="build-progress red" data-bs-toggle="tooltip" data-bs-title="build-progress: 60%">●</div></li>
-                                            <li>Lib - The main module with most of the actual code <div class="build-progress orange" data-bs-toggle="tooltip" data-bs-title="build-progress: 80%">●</div></li>
-                                            <li>DB - An EF Core / PostgreSQL database <div class="build-progress green" data-bs-toggle="tooltip" data-bs-title="build-progress: 100%">●</div></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                                <h4>Modules used</h4>
-                                <ul>
-                                    <li>Codespirals.Base</li>
-                                    <li>Codespirals.Solutions.ApiCaller - For SDK</li>
-                                    <li>Codespirals.Solutions.Mail - For signup, optional mail notifications</li>
-                                    <li>Codespirals.Common - For resources like Languages, currencies and countries</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="card-title">
-                                <h3>Others</h3>
-                            </div>
-                            <div class="card-text">
-                                <p>
-                                    Other Ideas are in the backlog, but I'm trying to avoid scope creep and focus on the current projects.
-                                </p>
-                                <p>
-                                    The Collabour project is basically my attempt to give myself a space where I can catalogue and prioritize project ideas
-                                    - or give them away, should I come to believe I can't do them.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control carousel-control-prev" type="button" data-bs-target="#carouselProjects" data-bs-slide="prev">
-                <span>←</span>
-            </button>
-            <button class="carousel-control carousel-control-next" type="button" data-bs-target="#carouselProjects" data-bs-slide="next">
-                <span>→</span>
-            </button>
-        </div>
-        <div class="section">
-            <h4>Misc</h4>
-            <h5>Symbols</h5>
-            <ul class="no-style">
-                <li id="symbol-commons"><small>☭ - is, or will be released with a CC0 licence, free for anyone to use, modify and use for anyone however they wish</small></li>
-                <li id="symbol-attributed"><small>🔓 - open source, but with an <a href="https://creativecommons.org/licenses/by-sa/4.0/">attribution licence</a></small></li>
-                <li id="symbol-locked"><small>🔑 - private until fully tested and released</small></li>
-                <li id="symbol-private"><small>🔒 - private with no current plans to release publicly</small></li>
-            </ul>
-            <h5>Sources</h5>
-            <ul class="no-style">
-                <li id="source1">
-                    <small>🕮 - <a href="https://learn.microsoft.com/en-us/dotnet/csharp/">Microsoft C# docs</a></small>
-                    <ul class="no-style">
-                        <li id="source-dependency-injection"><small><a href="https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection">Dependency Injection</a></small></li>
-                    </ul>
-                </li>
-            </ul>
-            <h5>Footnotes</h5>
+            <h4>Footnotes</h4>
             <ol>
                 <li id="footnote1" class="footnote">
                     Very occasionally, I let AI make one shot scripts in, like one I used to download tables from wikipedia.
                     Such entirely non-critical, throw away scripts are the limit of what I trust AI to do, where my laziness to write the script is greater than my disdain for AI.
+                    <a href="#footnote1-link">⬆</a>
                 </li>
             </ol>
         </div>
     </main>
-    <footer>
-        <div class="footer-content">
-            &copy;codespirals <span id="currentYear"></span> <span class="right"><a href="#top-of-page">⇈</a> <a href="https://github.com/Codespirals">⌨</a> <a href="mailto:admin@codespirals.dev">✉</a></span>
-        </div>
-    </footer>
+    <!--#include file="Components/footer.html"-->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="wwwroot/js/scripts.js"></script>
