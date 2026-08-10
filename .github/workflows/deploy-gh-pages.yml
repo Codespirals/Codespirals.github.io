@@ -12,6 +12,7 @@ jobs:
     env:
       #TODO: replace this variable to point to your .csproj file
       Project_Location: ./Codespirals.HomePage/Codespirals.HomePage.csproj
+      CODESPIRALS-HOMEPAGE-READ: "{{ github.CODESPIRALS-HOMEPAGE-READ }}"
     runs-on: ubuntu-latest
     permissions:
       contents: write

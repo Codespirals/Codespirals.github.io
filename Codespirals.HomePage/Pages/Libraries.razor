@@ -1,7 +1,22 @@
 ﻿@page "/libraries"
-@inject IContentService ContentService
+@using Codespirals.HomePage.Models.GitHub
+@inject IGitHubService GitHubService
+
+@foreach (var repo in _repos)
+{
+    <div>@repo.Name</div>
+}
 
 @code {
+    private IEnumerable<Repo> _repos = [];
 
+    protected override async Task OnInitializedAsync()
+    {
+        var res = GitHubService.GetRepositories();
+        if (res.Result.Success)
+            _repos = res.Result.Data!;
+
+        await base.OnInitializedAsync();
+    }
 }
  
