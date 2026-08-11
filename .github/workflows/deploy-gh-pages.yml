@@ -12,6 +12,7 @@ jobs:
     env:
       #TODO: replace this variable to point to your .csproj file
       Project_Location: ./Codespirals.HomePage/Codespirals.HomePage.csproj
+      CODESPIRALS-HOMEPAGE-READ: "{{ github.CODESPIRALS-HOMEPAGE-READ }}"
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -39,7 +40,7 @@ jobs:
           fi
 
       - name: Publish
-        run: dotnet publish $Project_Location -c Release -o publish
+        run: dotnet publish $Project_Location -c Release -o publish -p:WasmApplicationEnvironmentName=Production
 
       - name: Copy index to 404 for SPA routing
         run: |
