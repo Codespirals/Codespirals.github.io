@@ -1,6 +1,9 @@
 ﻿@page "/libraries"
 @using Codespirals.HomePage.Models.GitHub
+@using Microsoft.AspNetCore.Components.WebAssembly.Hosting
 @inject IGitHubService GitHubService
+@inject IWebAssemblyHostEnvironment Env
+
 
 @foreach (var repo in _repos)
 {

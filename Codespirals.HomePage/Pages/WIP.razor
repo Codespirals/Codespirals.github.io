@@ -1,0 +1,21 @@
+﻿@page "/wip"
+@using System.Web
+@using Microsoft.AspNetCore.Components.WebAssembly.Hosting
+@inject IContentService ContentService
+@inject IWebAssemblyHostEnvironment Env
+
+<div class="center">
+    <h2>Environment: @Env.Environment</h2>
+</div>
+<div class="content grid">
+    <label>Input</label><InputText @bind-Value="_text"></InputText>
+
+    <label>Uri Escape</label><label>@_uriEscape</label>
+    <label>Http Utility</label><label>@_httpUtility</label>
+</div>
+
+@code {
+    private string _text = "";
+    private string _uriEscape => Uri.EscapeDataString(_text);
+    private string _httpUtility => HttpUtility.UrlEncode(_text);
+}

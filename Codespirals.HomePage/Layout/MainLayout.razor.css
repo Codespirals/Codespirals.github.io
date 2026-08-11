@@ -39,7 +39,7 @@ footer {
 @media (min-width: 840px) {
     .page {
         --sidebar-height: 0;
-        --sidebar-width: 10rem;
+        --sidebar-width: 12rem;
     }
 
     main {
