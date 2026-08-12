@@ -1,6 +1,5 @@
 name: Build and deploy Blazor WebAssembly to GitHub Pages
 
-
 on:
   push:
     branches:
@@ -9,8 +8,7 @@ on:
 jobs:
   build-and-deploy:
     env:
-      #TODO: replace this variable to point to your .csproj file
-      Project_Location: ./Codespirals.HomePage/Codespirals.HomePage/Codespirals.HomePage.csproj
+      PROJECT_LOCATION: ./Codespirals.HomePage/Codespirals.HomePage.csproj
       CODESPIRALS-HOMEPAGE-READ: "{{ github.CODESPIRALS-HOMEPAGE-READ }}"
     runs-on: ubuntu-latest
     permissions:
@@ -26,7 +24,7 @@ jobs:
           dotnet-version: '10.x'
 
       - name: Restore
-        run: dotnet restore $Project_Location
+        run: dotnet restore $PROJECT_LOCATION
         
       - name: Set base href for GitHub Pages
         # Adjusts base href to "/<repo>/" so pages work at /repo/
@@ -39,7 +37,7 @@ jobs:
           fi
 
       - name: Publish
-        run: dotnet publish $Project_Location -c Release -o publish -p:WasmApplicationEnvironmentName=Production
+        run: dotnet publish $PROJECT_LOCATION -c Release -o publish -p:WasmApplicationEnvironmentName=Production
 
       - name: Copy index to 404 for SPA routing
         run: |
