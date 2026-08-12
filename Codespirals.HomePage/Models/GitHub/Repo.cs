@@ -15,4 +15,5 @@ public class Repo
     /// >The direct URL for further api calls
     /// </summary>
     public string Url { get; set; } = "";
+    public string[] Topics { get; set; } = [];
 }

@@ -1,7 +1,19 @@
 ﻿@page "/solutions"
-@inject IContentService ContentService
+@using Codespirals.HomePage.Models.GitHub
+@inject IGitHubService GitHubService
 
+<div class="content">
+    @foreach (var repo in _repos.Where(r => !r.Name.StartsWith('.')))
+    {
+        <Repository Repo="repo"></Repository>
+    }
+</div>
 
 @code {
+    private IEnumerable<Repo> _repos = [];
 
+    protected override async Task OnInitializedAsync()
+    {
+        _repos = await GitHubService.GetSolutions();
+    }
 }

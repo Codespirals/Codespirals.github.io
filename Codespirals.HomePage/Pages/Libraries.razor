@@ -1,25 +1,21 @@
 ﻿@page "/libraries"
 @using Codespirals.HomePage.Models.GitHub
-@using Microsoft.AspNetCore.Components.WebAssembly.Hosting
 @inject IGitHubService GitHubService
-@inject IWebAssemblyHostEnvironment Env
 
 
-@foreach (var repo in _repos)
-{
-    <div>@repo.Name</div>
-}
+<div class="content">
+    @foreach (var repo in _repos.Where(r => !r.Name.StartsWith('.')))
+    {
+        <Repository Repo="repo"></Repository>
+    }
+</div>
 
 @code {
     private IEnumerable<Repo> _repos = [];
 
     protected override async Task OnInitializedAsync()
     {
-        var res = GitHubService.GetRepositories();
-        if (res.Result.Success)
-            _repos = res.Result.Data!;
-
-        await base.OnInitializedAsync();
+        _repos = await GitHubService.GetLibraries();
     }
 }
  

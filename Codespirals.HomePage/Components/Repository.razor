@@ -1,0 +1,18 @@
+﻿@using Codespirals.HomePage.Models.GitHub
+
+<div class="repo-card">
+    <div class="repo-card-header">
+        <h3>@Repo.Name</h3>
+    </div>
+    <div class="repo-card-body">
+        <p>@Repo.Description</p>
+    </div>
+    <div class="repo-card-footer">
+        <a href="@Repo.HtmlUrl">=> To Repo</a>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public required Repo Repo { get; set; }
+}

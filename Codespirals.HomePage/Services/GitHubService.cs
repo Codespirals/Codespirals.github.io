@@ -5,7 +5,8 @@ namespace Codespirals.HomePage;
 
 public interface IGitHubService
 {
-    public Task<ApiResult<IEnumerable<Repo>>> GetRepositories();
+    public Task<IEnumerable<Repo>> GetLibraries();
+    public Task<IEnumerable<Repo>> GetSolutions();
 }
 
 public class GitHubService : IGitHubService
@@ -14,12 +15,27 @@ public class GitHubService : IGitHubService
 
     public GitHubService(IApiCallerFactory apiCallerFactory)
     {
-        _apiCaller = apiCallerFactory.CreateApiCaller("https://api.github.com/", group:"", userAgent: "codespirals");
+        _apiCaller = apiCallerFactory.CreateApiCaller("https://api.github.com/", group: "", userAgent: "codespirals");
         _apiCaller.AddDefaultHeader("Accept", "application/vnd.github+json");
-        _apiCaller.AddDefaultHeader("Authorization", $"Bearer {Environment.GetEnvironmentVariable("CODESPIRALS-HOMEPAGE-READ")}");
+        _apiCaller.AddDefaultHeader("Authorization", $"Bearer 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");
         _apiCaller.AddDefaultHeader("X-GitHub-Api-Version", "2026-03-10");
     }
 
-    public async Task<ApiResult<IEnumerable<Repo>>> GetRepositories()
+    private async Task<ApiResult<IEnumerable<Repo>>> GetRepositories()
         => await _apiCaller.Get<IEnumerable<Repo>>("orgs/Codespirals", "repos");
+
+    public async Task<IEnumerable<Repo>> GetLibraries()
+    {
+        var result = await GetRepositories();
+        if (!result.Success)
+            return [];
+        return result.Data!.Where(r => r.Topics.Contains("library"));
+    }
+    public async Task<IEnumerable<Repo>> GetSolutions()
+    {
+        var result = await GetRepositories();
+        if (!result.Success)
+            return [];
+        return result.Data!.Where(r => r.Topics.Contains("solution"));
+    }
 }
