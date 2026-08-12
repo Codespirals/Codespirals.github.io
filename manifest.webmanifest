@@ -1,6 +1,6 @@
 {
-  "name": "Codespirals.Blazor.WebsiteTemplate",
-  "short_name": "Codespirals.Blazor.WebsiteTemplate",
+  "name": "Codespirals.HomePage",
+  "short_name": "Codespirals",
   "id": "./",
   "start_url": "./",
   "display": "standalone",
