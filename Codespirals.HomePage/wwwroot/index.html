@@ -12,6 +12,7 @@
     <link href="Codespirals.HomePage.styles.css" rel="stylesheet" />
     <link href="manifest.webmanifest" rel="manifest" />
     <link rel="apple-touch-icon" sizes="64x64" href="images/icons/icon.png" />
+    <script type="importmap"></script>
 </head>
 
 <body>
@@ -31,7 +32,7 @@
 
     <script src="js/scripts.js"></script>
     <script src="_framework/blazor.webassembly#[.{fingerprint}].js"></script>
-    <script>navigator.serviceWorker.register('service-worker.js');</script>
+    <script>navigator.serviceWorker.register('service-worker.js', { updateViaCache: 'none' });</script>
 </body>
 
 </html>
