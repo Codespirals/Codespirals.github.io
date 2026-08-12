@@ -8,6 +8,10 @@ article[b-p04wrj4ij8] {
 	border: 1px solid white;
 	background-color: var(--color-background);
 }
+/* /Components/Repository.razor.rz.scp.css */
+.repo-card[b-5732leakbp] {
+	border: 1px solid var(--color-foreground);
+}
 /* /Layout/MainLayout.razor.rz.scp.css */
 .page[b-p9ykobcl07] {
     --sidebar-height: 2.5rem;

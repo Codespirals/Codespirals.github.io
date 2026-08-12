@@ -5,7 +5,7 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
   "mainAssemblyName": "Codespirals.HomePage",
   "applicationEnvironment": "Production",
   "resources": {
-    "hash": "sha256-kR5LOa3DgG2xAEnRgor3wwD4/2ZsmFqUUWiJDsYVi7U=",
+    "hash": "sha256-wQjyvACtZksE353W+8nHCiSACeVsYjKD/EwUslWt7/4=",
     "jsModuleNative": [
       {
         "name": "dotnet.native.vzj2a6aakt.js"
@@ -306,8 +306,8 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
       },
       {
         "virtualPath": "System.Runtime.wasm",
-        "name": "System.Runtime.j4asvt1p5l.wasm",
-        "hash": "sha256-Q4V/szHtebctqYWQNjQwZ4IMbRJGCKKZw3AhmE0cG4Y=",
+        "name": "System.Runtime.kjsyly4m7x.wasm",
+        "hash": "sha256-AH7CoChmkW64b5GZlNMgVKSOgOzYy5Bisccq/cSS9QQ=",
         "cache": "force-cache"
       },
       {
@@ -354,8 +354,8 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
       },
       {
         "virtualPath": "Codespirals.HomePage.wasm",
-        "name": "Codespirals.HomePage.ryc5bvfd8n.wasm",
-        "hash": "sha256-48cWRg0J6/N3jf+AJRveBa7aM9RLt2OFTKTz9caDISU=",
+        "name": "Codespirals.HomePage.xheyrk3brg.wasm",
+        "hash": "sha256-5TiGdhejTYAUxgUGnTRoLyk7VLf8BkhG12BgsxMjqqc=",
         "cache": "force-cache"
       }
     ]
