@@ -18,7 +18,7 @@
   
   <ItemGroup>
     <PackageReference Include="Codespirals.Base.Shared" Version="1.1.2.26120" />
-    <PackageReference Include="Codespirals.Solutions.ApiCaller" Version="1.0.61.26222" />
+    <PackageReference Include="Codespirals.Solutions.ApiCaller" Version="1.0.62.26223" />
     <PackageReference Include="Markdig" Version="1.1.3" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="10.0.10" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="10.0.10" PrivateAssets="all" />
