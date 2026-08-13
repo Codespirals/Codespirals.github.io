@@ -4,11 +4,15 @@
 
 
 <div class="content">
-    @foreach (var repo in _repos.Where(r => !r.Name.StartsWith('.')))
-    {
-        <Repository Repo="repo"></Repository>
-    }
+    <h2>Libraries</h2>
+    <p>
+        A collection of reusable libraries that present a solid foundation for other projects to build on.
+    </p>
 </div>
+@foreach (var repo in _repos)
+{
+    <Repository Repo="repo"></Repository>
+}
 
 @code {
     private IEnumerable<Repo> _repos = [];

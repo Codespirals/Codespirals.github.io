@@ -3,11 +3,16 @@
 @inject IGitHubService GitHubService
 
 <div class="content">
-    @foreach (var repo in _repos.Where(r => !r.Name.StartsWith('.')))
-    {
-        <Repository Repo="repo"></Repository>
-    }
+    <h2>Solutions</h2>
+    <p>
+        A collection of purpose built software that solve a specific problem, which modularly integrate into other projects.
+    </p>
 </div>
+
+@foreach (var repo in _repos)
+{
+    <Repository Repo="repo"></Repository>
+}
 
 @code {
     private IEnumerable<Repo> _repos = [];

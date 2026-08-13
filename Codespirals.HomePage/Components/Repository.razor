@@ -1,6 +1,6 @@
 ﻿@using Codespirals.HomePage.Models.GitHub
 
-<div class="repo-card">
+<a href ="@Repo.Html_Url" target="_blank" class="repo-card">
     <div class="repo-card-header">
         <h3>@Repo.Name</h3>
     </div>
@@ -8,9 +8,9 @@
         <p>@Repo.Description</p>
     </div>
     <div class="repo-card-footer">
-        <a href="@Repo.HtmlUrl">=> To Repo</a>
+        Last updated: @Repo.Pushed_At.ToShortDateString()
     </div>
-</div>
+</a>
 
 @code {
     [Parameter]
