@@ -17,7 +17,6 @@ public class GitHubService : IGitHubService
     {
         _apiCaller = apiCallerFactory.CreateApiCaller("https://api.github.com/", group: "", userAgent: "codespirals");
         _apiCaller.AddDefaultHeader("Accept", "application/vnd.github+json");
-        _apiCaller.AddDefaultHeader("Authorization", $"Bearer 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");
         _apiCaller.AddDefaultHeader("X-GitHub-Api-Version", "2026-03-10");
     }
 
