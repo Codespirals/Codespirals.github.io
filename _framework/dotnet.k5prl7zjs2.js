@@ -5,7 +5,7 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
   "mainAssemblyName": "Codespirals.HomePage",
   "applicationEnvironment": "Production",
   "resources": {
-    "hash": "sha256-wQjyvACtZksE353W+8nHCiSACeVsYjKD/EwUslWt7/4=",
+    "hash": "sha256-MqBlRJBYpeaAJ0Kvu1u2uAGXegAiYDvfVJMOQZx+tIU=",
     "jsModuleNative": [
       {
         "name": "dotnet.native.vzj2a6aakt.js"
@@ -52,8 +52,8 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
       },
       {
         "virtualPath": "System.Private.CoreLib.wasm",
-        "name": "System.Private.CoreLib.t6j0g0t18s.wasm",
-        "hash": "sha256-234aAGmxfY3Wgro7RDcmHWmw4ebFoXxsbw/HdaO3CSI=",
+        "name": "System.Private.CoreLib.bjtgkzo07e.wasm",
+        "hash": "sha256-h3m50SjoKXYENgL0cQFY53c+Yl5FJmC4gYnc+VYXvZo=",
         "cache": "force-cache"
       }
     ],
@@ -96,8 +96,8 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
       },
       {
         "virtualPath": "Microsoft.AspNetCore.Components.WebAssembly.wasm",
-        "name": "Microsoft.AspNetCore.Components.WebAssembly.zr2yocb2he.wasm",
-        "hash": "sha256-ccU1neJrlB/snslmkM0zmjJN/7wq05r2IvCs00Q1kKM=",
+        "name": "Microsoft.AspNetCore.Components.WebAssembly.fa8asbjuyt.wasm",
+        "hash": "sha256-d6DpTRICdcc4AB2naPY8PFjmOqCOoYvuFGSI/9PVYGM=",
         "cache": "force-cache"
       },
       {
@@ -137,9 +137,15 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
         "cache": "force-cache"
       },
       {
+        "virtualPath": "Microsoft.Extensions.Hosting.Abstractions.wasm",
+        "name": "Microsoft.Extensions.Hosting.Abstractions.7px6oizt23.wasm",
+        "hash": "sha256-5f9JuIDBWnanJUDpkuIx/a2bN+DGl3a3saNWQJye7Y4=",
+        "cache": "force-cache"
+      },
+      {
         "virtualPath": "Microsoft.Extensions.Logging.wasm",
-        "name": "Microsoft.Extensions.Logging.dziqsuznn7.wasm",
-        "hash": "sha256-Z1lmLXx19CXeRu9ZeAMaSX+BpLQB+Mvb8CwNG0K0o04=",
+        "name": "Microsoft.Extensions.Logging.6cry6dcejo.wasm",
+        "hash": "sha256-5hhMpcAOBvYcVpVLzzTyfDWQQ0LcI91SU5vqvFRPfGw=",
         "cache": "force-cache"
       },
       {
@@ -354,8 +360,8 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
       },
       {
         "virtualPath": "Codespirals.HomePage.wasm",
-        "name": "Codespirals.HomePage.xheyrk3brg.wasm",
-        "hash": "sha256-5TiGdhejTYAUxgUGnTRoLyk7VLf8BkhG12BgsxMjqqc=",
+        "name": "Codespirals.HomePage.zusfnfryw8.wasm",
+        "hash": "sha256-24JzmO/N64EeDlVbOPA+2T29LnYQZ8Xy/aWtyXDxYzA=",
         "cache": "force-cache"
       }
     ]
