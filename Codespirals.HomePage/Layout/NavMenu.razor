@@ -1,7 +1,7 @@
 ﻿@inject IContentService ContentService
 @inject NavigationManager NavigationManager
 
-<h1 class="navbar-brand"><NavLink href="/" Match="NavLinkMatch.All" tabindex="0" @onclick="CloseNavMenu">@Constants.SiteName</NavLink></h1>
+<NavLink href="/" Match="NavLinkMatch.All" tabindex="0" @onclick="CloseNavMenu"><img class="navbar-brand" src="/images/icons/icon-64x64.png" alt="The codespirals icon" /><h1>@Constants.SiteName</h1></NavLink>
 
 <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
     <div class="line"></div>

@@ -1,14 +1,14 @@
 [
 	{
-		"Name": "Blog",
-		"Link": "https://eliterate.blog/"
-	},
-	{
 		"Name": "Libraries",
 		"Link": "libraries"
 	},
 	{
 		"Name": "Solutions",
 		"Link": "solutions"
+	},
+	{
+		"Name": "Blog",
+		"Link": "https://eliterate.blog/"
 	}
 ]

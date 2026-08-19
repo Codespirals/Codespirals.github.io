@@ -18,6 +18,7 @@ main {
 
 footer {
     position: absolute;
+    height: 1.5rem;
     width: 100%;
     padding: 0 0.5rem;
     bottom: 0;
@@ -30,16 +31,16 @@ footer {
     position: sticky;
     height: var(--sidebar-height);
     width: var(--sidebar-width);
+    min-width: calc(var(--min-width) - 20px);
     z-index: 1;
-    background-image: var(--texture-paper);
     border: none;
     border-bottom: 1px solid var(--color-foreground);
 }
 
 @media (min-width: 840px) {
     .page {
-        --sidebar-height: 0;
-        --sidebar-width: 12rem;
+        --sidebar-height: calc(100% - 1.5rem);
+        --sidebar-width: 13rem;
     }
 
     main {
@@ -49,8 +50,8 @@ footer {
     }
 
     .sidebar {
-        position: static;
-        height: 100%;
+        position: relative;
+        min-width: max-content;
         border: none;
         border-right: 1px solid var(--color-foreground);
     }

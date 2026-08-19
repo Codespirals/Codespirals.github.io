@@ -20,21 +20,16 @@ public class GitHubService : IGitHubService
         _apiCaller.AddDefaultHeader("X-GitHub-Api-Version", "2026-03-10");
     }
 
-    private async Task<ApiResult<IEnumerable<Repo>>> GetRepositories()
-        => await _apiCaller.Get<IEnumerable<Repo>>("orgs/Codespirals", "repos");
+    private async Task<IEnumerable<Repo>> GetRepositories()
+    {
+        var result = await _apiCaller.Get<IEnumerable<Repo>>("orgs/Codespirals", "repos");
+        if (!result.Success)
+            return [];
+        return result.Data!.OrderByDescending(l => l.Pushed_At);
+    }
 
     public async Task<IEnumerable<Repo>> GetLibraries()
-    {
-        var result = await GetRepositories();
-        if (!result.Success)
-            return [];
-        return result.Data!.Where(r => r.Topics.Contains("library"));
-    }
+         => (await GetRepositories()).Where(r => r.Topics.Contains("library"));
     public async Task<IEnumerable<Repo>> GetSolutions()
-    {
-        var result = await GetRepositories();
-        if (!result.Success)
-            return [];
-        return result.Data!.Where(r => r.Topics.Contains("solution"));
-    }
+         => (await GetRepositories()).Where(r => r.Topics.Contains("solution"));
 }
